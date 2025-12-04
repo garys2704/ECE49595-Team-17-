@@ -25,7 +25,7 @@ void loop() {
   int maxLoudnessR = 420;
   int minLoudnessL = 1;   
   int maxLoudnessL = 420;
-  int vibrationIntensityR = map(amplitudeR, minLoudnessR, maxLoudnessR, 0, 255); //ngl i dont really understand this part, thx gemini
+  int vibrationIntensityR = map(amplitudeR, minLoudnessR, maxLoudnessR, 0, 255); 
   int vibrationIntensityL = map(amplitudeL, minLoudnessL, maxLoudnessL, 0, 255);
 
   vibrationIntensityR = constrain(vibrationIntensityR, 0, 255);
