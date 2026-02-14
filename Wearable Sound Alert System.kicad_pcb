@@ -263,7 +263,7 @@
 
   (footprint "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder" (layer "F.Cu")
     (tstamp 0039d233-ed6f-4309-96e0-ea0b375d7af0)
-    (at 164.796 94.988)
+    (at 137.7825 151.2225)
     (descr "Resistor SMD 0805 (2012 Metric), square (rectangular) end terminal, IPC_7351 nominal with elongated pad for handsoldering. (Body size source: IPC-SM-782 page 72, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf), generated with kicad-footprint-generator")
     (tags "resistor handsolder")
     (property "Sheetfile" "Wearable Sound Alert System.kicad_sch")
@@ -317,7 +317,7 @@
 
   (footprint "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder" (layer "F.Cu")
     (tstamp 00e3ba9a-a110-4dcf-8855-f3b7b15c8729)
-    (at 131.276 113.198)
+    (at 104.2625 169.4325)
     (descr "Capacitor SMD 0805 (2012 Metric), square (rectangular) end terminal, IPC_7351 nominal with elongated pad for handsoldering. (Body size source: IPC-SM-782 page 76, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf, https://docs.google.com/spreadsheets/d/1BsfQQcO9C6DZCsRaXUlFlo91Tg2WpOkGARC1WS5S8t0/edit?usp=sharing), generated with kicad-footprint-generator")
     (tags "capacitor handsolder")
     (property "Sheetfile" "Wearable Sound Alert System.kicad_sch")
@@ -371,7 +371,7 @@
 
   (footprint "LED_SMD:LED_0805_2012Metric_Pad1.15x1.40mm_HandSolder" (layer "F.Cu")
     (tstamp 01b06b2a-ff32-48e8-a715-555f62ea8d89)
-    (at 168.101 122.303)
+    (at 141.0875 178.5375)
     (descr "LED SMD 0805 (2012 Metric), square (rectangular) end terminal, IPC_7351 nominal, (Body size source: https://docs.google.com/spreadsheets/d/1BsfQQcO9C6DZCsRaXUlFlo91Tg2WpOkGARC1WS5S8t0/edit?usp=sharing), generated with kicad-footprint-generator")
     (tags "LED handsolder")
     (property "Sheetfile" "Wearable Sound Alert System.kicad_sch")
@@ -429,7 +429,7 @@
 
   (footprint "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder" (layer "F.Cu")
     (tstamp 1020dce6-8c7c-4112-a1ab-4c7688c4b38c)
-    (at 136.086 104.168)
+    (at 109.0725 160.4025)
     (descr "Capacitor SMD 0805 (2012 Metric), square (rectangular) end terminal, IPC_7351 nominal with elongated pad for handsoldering. (Body size source: IPC-SM-782 page 76, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf, https://docs.google.com/spreadsheets/d/1BsfQQcO9C6DZCsRaXUlFlo91Tg2WpOkGARC1WS5S8t0/edit?usp=sharing), generated with kicad-footprint-generator")
     (tags "capacitor handsolder")
     (property "Sheetfile" "Wearable Sound Alert System.kicad_sch")
@@ -483,7 +483,7 @@
 
   (footprint "Button_Switch_THT:SW_Tactile_Straight_KSA0Axx1LFTR" (layer "F.Cu")
     (tstamp 12c53127-5043-4f95-afc9-2d1473b2ad00)
-    (at 161.626 72.588)
+    (at 134.6125 128.8225)
     (descr "SW PUSH SMALL http://www.ckswitches.com/media/1457/ksa_ksl.pdf")
     (tags "SW PUSH SMALL Tactile C&K")
     (property "Sheetfile" "Wearable Sound Alert System.kicad_sch")
@@ -555,7 +555,7 @@
 
   (footprint "Inductor_SMD:L_1206_3216Metric_Pad1.42x1.75mm_HandSolder" (layer "F.Cu")
     (tstamp 143abeb3-c13a-4d80-8b37-6c1a6221b9d3)
-    (at 151.776 84.638)
+    (at 124.7625 140.8725)
     (descr "Inductor SMD 1206 (3216 Metric), square (rectangular) end terminal, IPC_7351 nominal with elongated pad for handsoldering. (Body size source: http://www.tortai-tech.com/upload/download/2011102023233369053.pdf), generated with kicad-footprint-generator")
     (tags "inductor handsolder")
     (property "Sheetfile" "Wearable Sound Alert System.kicad_sch")
@@ -609,7 +609,7 @@
 
   (footprint "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder" (layer "F.Cu")
     (tstamp 177a95bc-8c39-46d3-a8af-9d650c454f3a)
-    (at 155.296 103.838)
+    (at 128.2825 160.0725)
     (descr "Resistor SMD 0805 (2012 Metric), square (rectangular) end terminal, IPC_7351 nominal with elongated pad for handsoldering. (Body size source: IPC-SM-782 page 72, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf), generated with kicad-footprint-generator")
     (tags "resistor handsolder")
     (property "Sheetfile" "Wearable Sound Alert System.kicad_sch")
@@ -663,7 +663,7 @@
 
   (footprint "MountingHole:MountingHole_3.2mm_M3" (layer "F.Cu")
     (tstamp 1e5cb407-74dd-4c2a-a060-97b41ecf9d35)
-    (at 144.826 56.478)
+    (at 117.8125 112.7125)
     (descr "Mounting Hole 3.2mm, no annular, M3")
     (tags "mounting hole 3.2mm no annular m3")
     (property "Sheetfile" "Wearable Sound Alert System.kicad_sch")
@@ -693,7 +693,7 @@
 
   (footprint "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder" (layer "F.Cu")
     (tstamp 22542d6d-7216-41a9-a8a4-3ff05e71492e)
-    (at 145.706 101.158)
+    (at 118.6925 157.3925)
     (descr "Capacitor SMD 0805 (2012 Metric), square (rectangular) end terminal, IPC_7351 nominal with elongated pad for handsoldering. (Body size source: IPC-SM-782 page 76, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf, https://docs.google.com/spreadsheets/d/1BsfQQcO9C6DZCsRaXUlFlo91Tg2WpOkGARC1WS5S8t0/edit?usp=sharing), generated with kicad-footprint-generator")
     (tags "capacitor handsolder")
     (property "Sheetfile" "Wearable Sound Alert System.kicad_sch")
@@ -747,7 +747,7 @@
 
   (footprint "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder" (layer "F.Cu")
     (tstamp 233e5772-88cb-4e29-ab4f-73035ad56434)
-    (at 140.896 98.148)
+    (at 113.8825 154.3825)
     (descr "Capacitor SMD 0805 (2012 Metric), square (rectangular) end terminal, IPC_7351 nominal with elongated pad for handsoldering. (Body size source: IPC-SM-782 page 76, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf, https://docs.google.com/spreadsheets/d/1BsfQQcO9C6DZCsRaXUlFlo91Tg2WpOkGARC1WS5S8t0/edit?usp=sharing), generated with kicad-footprint-generator")
     (tags "capacitor handsolder")
     (property "Sheetfile" "Wearable Sound Alert System.kicad_sch")
@@ -801,7 +801,7 @@
 
   (footprint "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder" (layer "F.Cu")
     (tstamp 23c5499d-d643-4141-ae0e-cd7444e1a01a)
-    (at 140.896 107.178)
+    (at 113.8825 163.4125)
     (descr "Capacitor SMD 0805 (2012 Metric), square (rectangular) end terminal, IPC_7351 nominal with elongated pad for handsoldering. (Body size source: IPC-SM-782 page 76, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf, https://docs.google.com/spreadsheets/d/1BsfQQcO9C6DZCsRaXUlFlo91Tg2WpOkGARC1WS5S8t0/edit?usp=sharing), generated with kicad-footprint-generator")
     (tags "capacitor handsolder")
     (property "Sheetfile" "Wearable Sound Alert System.kicad_sch")
@@ -855,7 +855,7 @@
 
   (footprint "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder" (layer "F.Cu")
     (tstamp 240c43c8-234e-4bfa-8c6d-e5362c8dc705)
-    (at 155.296 100.888)
+    (at 128.2825 157.1225)
     (descr "Resistor SMD 0805 (2012 Metric), square (rectangular) end terminal, IPC_7351 nominal with elongated pad for handsoldering. (Body size source: IPC-SM-782 page 72, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf), generated with kicad-footprint-generator")
     (tags "resistor handsolder")
     (property "Sheetfile" "Wearable Sound Alert System.kicad_sch")
@@ -909,7 +909,7 @@
 
   (footprint "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder" (layer "F.Cu")
     (tstamp 24ab53a3-1c89-4b3b-a9b0-c25aec074578)
-    (at 131.276 95.138)
+    (at 104.2625 151.3725)
     (descr "Capacitor SMD 0805 (2012 Metric), square (rectangular) end terminal, IPC_7351 nominal with elongated pad for handsoldering. (Body size source: IPC-SM-782 page 76, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf, https://docs.google.com/spreadsheets/d/1BsfQQcO9C6DZCsRaXUlFlo91Tg2WpOkGARC1WS5S8t0/edit?usp=sharing), generated with kicad-footprint-generator")
     (tags "capacitor handsolder")
     (property "Sheetfile" "Wearable Sound Alert System.kicad_sch")
@@ -963,7 +963,7 @@
 
   (footprint "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder" (layer "F.Cu")
     (tstamp 24f27c4c-b166-4713-aece-a9ffebd42929)
-    (at 155.296 89.088)
+    (at 128.2825 145.3225)
     (descr "Resistor SMD 0805 (2012 Metric), square (rectangular) end terminal, IPC_7351 nominal with elongated pad for handsoldering. (Body size source: IPC-SM-782 page 72, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf), generated with kicad-footprint-generator")
     (tags "resistor handsolder")
     (property "Sheetfile" "Wearable Sound Alert System.kicad_sch")
@@ -1017,7 +1017,7 @@
 
   (footprint "MountingHole:MountingHole_3.2mm_M3" (layer "F.Cu")
     (tstamp 25220fe8-d746-45a6-9e03-cf179a2b089c)
-    (at 144.826 72.378)
+    (at 117.8125 128.6125)
     (descr "Mounting Hole 3.2mm, no annular, M3")
     (tags "mounting hole 3.2mm no annular m3")
     (property "Sheetfile" "Wearable Sound Alert System.kicad_sch")
@@ -1047,7 +1047,7 @@
 
   (footprint "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder" (layer "F.Cu")
     (tstamp 2649f1e5-d695-40ae-9077-dafd112a6926)
-    (at 140.896 95.138)
+    (at 113.8825 151.3725)
     (descr "Capacitor SMD 0805 (2012 Metric), square (rectangular) end terminal, IPC_7351 nominal with elongated pad for handsoldering. (Body size source: IPC-SM-782 page 76, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf, https://docs.google.com/spreadsheets/d/1BsfQQcO9C6DZCsRaXUlFlo91Tg2WpOkGARC1WS5S8t0/edit?usp=sharing), generated with kicad-footprint-generator")
     (tags "capacitor handsolder")
     (property "Sheetfile" "Wearable Sound Alert System.kicad_sch")
@@ -1101,7 +1101,7 @@
 
   (footprint "LED_SMD:LED_0805_2012Metric_Pad1.15x1.40mm_HandSolder" (layer "F.Cu")
     (tstamp 287ca3cc-f4e1-427d-b244-c34845d4defe)
-    (at 168.101 128.383)
+    (at 141.0875 184.6175)
     (descr "LED SMD 0805 (2012 Metric), square (rectangular) end terminal, IPC_7351 nominal, (Body size source: https://docs.google.com/spreadsheets/d/1BsfQQcO9C6DZCsRaXUlFlo91Tg2WpOkGARC1WS5S8t0/edit?usp=sharing), generated with kicad-footprint-generator")
     (tags "LED handsolder")
     (property "Sheetfile" "Wearable Sound Alert System.kicad_sch")
@@ -1159,7 +1159,7 @@
 
   (footprint "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder" (layer "F.Cu")
     (tstamp 28943444-d547-4098-a602-d7bde5e62324)
-    (at 136.086 101.158)
+    (at 109.0725 157.3925)
     (descr "Capacitor SMD 0805 (2012 Metric), square (rectangular) end terminal, IPC_7351 nominal with elongated pad for handsoldering. (Body size source: IPC-SM-782 page 76, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf, https://docs.google.com/spreadsheets/d/1BsfQQcO9C6DZCsRaXUlFlo91Tg2WpOkGARC1WS5S8t0/edit?usp=sharing), generated with kicad-footprint-generator")
     (tags "capacitor handsolder")
     (property "Sheetfile" "Wearable Sound Alert System.kicad_sch")
@@ -1213,7 +1213,7 @@
 
   (footprint "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder" (layer "F.Cu")
     (tstamp 289e0044-05c7-43e0-b855-066b3a3c0d15)
-    (at 140.896 113.198)
+    (at 113.8825 169.4325)
     (descr "Capacitor SMD 0805 (2012 Metric), square (rectangular) end terminal, IPC_7351 nominal with elongated pad for handsoldering. (Body size source: IPC-SM-782 page 76, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf, https://docs.google.com/spreadsheets/d/1BsfQQcO9C6DZCsRaXUlFlo91Tg2WpOkGARC1WS5S8t0/edit?usp=sharing), generated with kicad-footprint-generator")
     (tags "capacitor handsolder")
     (property "Sheetfile" "Wearable Sound Alert System.kicad_sch")
@@ -1267,7 +1267,7 @@
 
   (footprint "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder" (layer "F.Cu")
     (tstamp 2c9901e7-aefd-4244-a1ed-977f18ece816)
-    (at 145.706 98.148)
+    (at 118.6925 154.3825)
     (descr "Capacitor SMD 0805 (2012 Metric), square (rectangular) end terminal, IPC_7351 nominal with elongated pad for handsoldering. (Body size source: IPC-SM-782 page 76, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf, https://docs.google.com/spreadsheets/d/1BsfQQcO9C6DZCsRaXUlFlo91Tg2WpOkGARC1WS5S8t0/edit?usp=sharing), generated with kicad-footprint-generator")
     (tags "capacitor handsolder")
     (property "Sheetfile" "Wearable Sound Alert System.kicad_sch")
@@ -1321,7 +1321,7 @@
 
   (footprint "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder" (layer "F.Cu")
     (tstamp 2fba73d2-d2f2-4381-9c15-63f04e4539db)
-    (at 136.086 113.198)
+    (at 109.0725 169.4325)
     (descr "Capacitor SMD 0805 (2012 Metric), square (rectangular) end terminal, IPC_7351 nominal with elongated pad for handsoldering. (Body size source: IPC-SM-782 page 76, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf, https://docs.google.com/spreadsheets/d/1BsfQQcO9C6DZCsRaXUlFlo91Tg2WpOkGARC1WS5S8t0/edit?usp=sharing), generated with kicad-footprint-generator")
     (tags "capacitor handsolder")
     (property "Sheetfile" "Wearable Sound Alert System.kicad_sch")
@@ -1375,7 +1375,7 @@
 
   (footprint "MountingHole:MountingHole_3.2mm_M3" (layer "F.Cu")
     (tstamp 33b16de7-9dd1-4436-a943-a37cfba43e9b)
-    (at 144.826 80.328)
+    (at 117.8125 136.5625)
     (descr "Mounting Hole 3.2mm, no annular, M3")
     (tags "mounting hole 3.2mm no annular m3")
     (property "Sheetfile" "Wearable Sound Alert System.kicad_sch")
@@ -1405,7 +1405,7 @@
 
   (footprint "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder" (layer "F.Cu")
     (tstamp 33d58bd1-94c0-4c48-8c52-6f11ac23f2ce)
-    (at 155.296 106.788)
+    (at 128.2825 163.0225)
     (descr "Resistor SMD 0805 (2012 Metric), square (rectangular) end terminal, IPC_7351 nominal with elongated pad for handsoldering. (Body size source: IPC-SM-782 page 72, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf), generated with kicad-footprint-generator")
     (tags "resistor handsolder")
     (property "Sheetfile" "Wearable Sound Alert System.kicad_sch")
@@ -1459,7 +1459,7 @@
 
   (footprint "Inductor_SMD:L_1206_3216Metric_Pad1.42x1.75mm_HandSolder" (layer "F.Cu")
     (tstamp 3bf35e2d-b249-40ed-80a5-48633a49d05d)
-    (at 151.776 81.348)
+    (at 124.7625 137.5825)
     (descr "Inductor SMD 1206 (3216 Metric), square (rectangular) end terminal, IPC_7351 nominal with elongated pad for handsoldering. (Body size source: http://www.tortai-tech.com/upload/download/2011102023233369053.pdf), generated with kicad-footprint-generator")
     (tags "inductor handsolder")
     (property "Sheetfile" "Wearable Sound Alert System.kicad_sch")
@@ -1513,7 +1513,7 @@
 
   (footprint "Downloaded_footprints:XDCR_PEC11R-4220F-S0024" (layer "F.Cu")
     (tstamp 3c32ed78-80a4-4256-bd64-a79fb9a127f6)
-    (at 156.776 61.553)
+    (at 129.7625 117.7875)
     (property "CREATOR" "ASHISH")
     (property "MANUFACTURER" "Bourns")
     (property "PARTREV" "11/23")
@@ -1585,7 +1585,7 @@
 
   (footprint "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder" (layer "F.Cu")
     (tstamp 3dfbf706-4e50-47f5-bf5b-b25d18ca65df)
-    (at 160.046 89.088)
+    (at 133.0325 145.3225)
     (descr "Resistor SMD 0805 (2012 Metric), square (rectangular) end terminal, IPC_7351 nominal with elongated pad for handsoldering. (Body size source: IPC-SM-782 page 72, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf), generated with kicad-footprint-generator")
     (tags "resistor handsolder")
     (property "Sheetfile" "Wearable Sound Alert System.kicad_sch")
@@ -1639,7 +1639,7 @@
 
   (footprint "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder" (layer "F.Cu")
     (tstamp 4261e5af-693e-477d-92a5-a1022c7e4362)
-    (at 160.046 92.038)
+    (at 133.0325 148.2725)
     (descr "Resistor SMD 0805 (2012 Metric), square (rectangular) end terminal, IPC_7351 nominal with elongated pad for handsoldering. (Body size source: IPC-SM-782 page 72, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf), generated with kicad-footprint-generator")
     (tags "resistor handsolder")
     (property "Sheetfile" "Wearable Sound Alert System.kicad_sch")
@@ -1693,7 +1693,7 @@
 
   (footprint "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder" (layer "F.Cu")
     (tstamp 4360b689-82b8-4561-8974-2813a5fee938)
-    (at 150.516 107.178)
+    (at 123.5025 163.4125)
     (descr "Capacitor SMD 0805 (2012 Metric), square (rectangular) end terminal, IPC_7351 nominal with elongated pad for handsoldering. (Body size source: IPC-SM-782 page 76, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf, https://docs.google.com/spreadsheets/d/1BsfQQcO9C6DZCsRaXUlFlo91Tg2WpOkGARC1WS5S8t0/edit?usp=sharing), generated with kicad-footprint-generator")
     (tags "capacitor handsolder")
     (property "Sheetfile" "Wearable Sound Alert System.kicad_sch")
@@ -1747,7 +1747,7 @@
 
   (footprint "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder" (layer "F.Cu")
     (tstamp 466012e1-c321-462e-8b53-69724b5772bf)
-    (at 155.296 97.938)
+    (at 128.2825 154.1725)
     (descr "Resistor SMD 0805 (2012 Metric), square (rectangular) end terminal, IPC_7351 nominal with elongated pad for handsoldering. (Body size source: IPC-SM-782 page 72, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf), generated with kicad-footprint-generator")
     (tags "resistor handsolder")
     (property "Sheetfile" "Wearable Sound Alert System.kicad_sch")
@@ -1801,7 +1801,7 @@
 
   (footprint "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder" (layer "F.Cu")
     (tstamp 471227c5-27f0-469e-898e-baab042f17a3)
-    (at 164.796 89.088)
+    (at 137.7825 145.3225)
     (descr "Resistor SMD 0805 (2012 Metric), square (rectangular) end terminal, IPC_7351 nominal with elongated pad for handsoldering. (Body size source: IPC-SM-782 page 72, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf), generated with kicad-footprint-generator")
     (tags "resistor handsolder")
     (property "Sheetfile" "Wearable Sound Alert System.kicad_sch")
@@ -1855,7 +1855,7 @@
 
   (footprint "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder" (layer "F.Cu")
     (tstamp 48920496-25eb-471b-a1b8-10dcc1cd2521)
-    (at 131.276 110.188)
+    (at 104.2625 166.4225)
     (descr "Capacitor SMD 0805 (2012 Metric), square (rectangular) end terminal, IPC_7351 nominal with elongated pad for handsoldering. (Body size source: IPC-SM-782 page 76, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf, https://docs.google.com/spreadsheets/d/1BsfQQcO9C6DZCsRaXUlFlo91Tg2WpOkGARC1WS5S8t0/edit?usp=sharing), generated with kicad-footprint-generator")
     (tags "capacitor handsolder")
     (property "Sheetfile" "Wearable Sound Alert System.kicad_sch")
@@ -1909,7 +1909,7 @@
 
   (footprint "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder" (layer "F.Cu")
     (tstamp 5536137a-471d-4b3b-89c2-4f1bf2225154)
-    (at 136.086 89.118)
+    (at 109.0725 145.3525)
     (descr "Capacitor SMD 0805 (2012 Metric), square (rectangular) end terminal, IPC_7351 nominal with elongated pad for handsoldering. (Body size source: IPC-SM-782 page 76, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf, https://docs.google.com/spreadsheets/d/1BsfQQcO9C6DZCsRaXUlFlo91Tg2WpOkGARC1WS5S8t0/edit?usp=sharing), generated with kicad-footprint-generator")
     (tags "capacitor handsolder")
     (property "Sheetfile" "Wearable Sound Alert System.kicad_sch")
@@ -1963,7 +1963,7 @@
 
   (footprint "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder" (layer "F.Cu")
     (tstamp 58b4254a-2756-4b39-b7ef-cccd5c18e8b2)
-    (at 131.276 104.168)
+    (at 104.2625 160.4025)
     (descr "Capacitor SMD 0805 (2012 Metric), square (rectangular) end terminal, IPC_7351 nominal with elongated pad for handsoldering. (Body size source: IPC-SM-782 page 76, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf, https://docs.google.com/spreadsheets/d/1BsfQQcO9C6DZCsRaXUlFlo91Tg2WpOkGARC1WS5S8t0/edit?usp=sharing), generated with kicad-footprint-generator")
     (tags "capacitor handsolder")
     (property "Sheetfile" "Wearable Sound Alert System.kicad_sch")
@@ -2017,7 +2017,7 @@
 
   (footprint "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder" (layer "F.Cu")
     (tstamp 60f00540-29be-4f38-a7a5-beeb451543c9)
-    (at 164.796 92.038)
+    (at 137.7825 148.2725)
     (descr "Resistor SMD 0805 (2012 Metric), square (rectangular) end terminal, IPC_7351 nominal with elongated pad for handsoldering. (Body size source: IPC-SM-782 page 72, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf), generated with kicad-footprint-generator")
     (tags "resistor handsolder")
     (property "Sheetfile" "Wearable Sound Alert System.kicad_sch")
@@ -2071,7 +2071,7 @@
 
   (footprint "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder" (layer "F.Cu")
     (tstamp 6b2e8007-d452-4129-a825-4c85811c8cd8)
-    (at 136.086 107.178)
+    (at 109.0725 163.4125)
     (descr "Capacitor SMD 0805 (2012 Metric), square (rectangular) end terminal, IPC_7351 nominal with elongated pad for handsoldering. (Body size source: IPC-SM-782 page 76, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf, https://docs.google.com/spreadsheets/d/1BsfQQcO9C6DZCsRaXUlFlo91Tg2WpOkGARC1WS5S8t0/edit?usp=sharing), generated with kicad-footprint-generator")
     (tags "capacitor handsolder")
     (property "Sheetfile" "Wearable Sound Alert System.kicad_sch")
@@ -2125,7 +2125,7 @@
 
   (footprint "Downloaded_footprints:2.8_tft_240x320_touch_sd_spi" (layer "F.Cu")
     (tstamp 6d81b46e-29b3-49b9-814c-96e575ec60b8)
-    (at 78.301 53.253)
+    (at 51.2875 109.4875)
     (property "Sheetfile" "Wearable Sound Alert System.kicad_sch")
     (property "Sheetname" "")
     (path "/3ae8d9cb-6863-445a-8f2c-1c6548f2983c")
@@ -2280,7 +2280,7 @@
 
   (footprint "Downloaded_footprints:TPS63020DSJR" (layer "F.Cu")
     (tstamp 7269290d-ff97-4bdd-995a-fe67c604e0f1)
-    (at 167.460999 55.205)
+    (at 140.447499 111.4395)
     (tags "TPS63020DSJR ")
     (property "Sheetfile" "Wearable Sound Alert System.kicad_sch")
     (property "Sheetname" "")
@@ -3093,7 +3093,7 @@
 
   (footprint "Connector_Molex:Molex_CLIK-Mate_502386-0270_1x02-1MP_P1.25mm_Horizontal" (layer "F.Cu")
     (tstamp 745fa914-20ac-4b33-9e6f-a071c3f99146)
-    (at 164.156 83.328)
+    (at 137.1425 139.5625)
     (descr "Molex CLIK-Mate series connector, 502386-0270 (http://www.molex.com/pdm_docs/sd/5023860270_sd.pdf), generated with kicad-footprint-generator")
     (tags "connector Molex CLIK-Mate top entry")
     (property "Sheetfile" "Wearable Sound Alert System.kicad_sch")
@@ -3169,7 +3169,7 @@
 
   (footprint "Downloaded_footprints:LQFP144-20x20mm_STM" (layer "F.Cu")
     (tstamp 78e2ed61-3c09-4994-9039-9260a9151362)
-    (at 141.325501 127.0853)
+    (at 114.312001 63.5)
     (tags "STM32F767ZIT6 ")
     (property "Sheetfile" "Wearable Sound Alert System.kicad_sch")
     (property "Sheetname" "")
@@ -3676,7 +3676,7 @@
 
   (footprint "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder" (layer "F.Cu")
     (tstamp 79530745-50f9-4aa8-bad6-86e2c5df936c)
-    (at 145.706 110.188)
+    (at 118.6925 166.4225)
     (descr "Capacitor SMD 0805 (2012 Metric), square (rectangular) end terminal, IPC_7351 nominal with elongated pad for handsoldering. (Body size source: IPC-SM-782 page 76, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf, https://docs.google.com/spreadsheets/d/1BsfQQcO9C6DZCsRaXUlFlo91Tg2WpOkGARC1WS5S8t0/edit?usp=sharing), generated with kicad-footprint-generator")
     (tags "capacitor handsolder")
     (property "Sheetfile" "Wearable Sound Alert System.kicad_sch")
@@ -3730,7 +3730,7 @@
 
   (footprint "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder" (layer "F.Cu")
     (tstamp 7a0b3afa-851e-4a52-9e05-c99d3f77d7f9)
-    (at 145.706 95.138)
+    (at 118.6925 151.3725)
     (descr "Capacitor SMD 0805 (2012 Metric), square (rectangular) end terminal, IPC_7351 nominal with elongated pad for handsoldering. (Body size source: IPC-SM-782 page 76, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf, https://docs.google.com/spreadsheets/d/1BsfQQcO9C6DZCsRaXUlFlo91Tg2WpOkGARC1WS5S8t0/edit?usp=sharing), generated with kicad-footprint-generator")
     (tags "capacitor handsolder")
     (property "Sheetfile" "Wearable Sound Alert System.kicad_sch")
@@ -3784,7 +3784,7 @@
 
   (footprint "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder" (layer "F.Cu")
     (tstamp 7a68156a-0135-4bd5-bf02-d2eedff39810)
-    (at 145.706 107.178)
+    (at 118.6925 163.4125)
     (descr "Capacitor SMD 0805 (2012 Metric), square (rectangular) end terminal, IPC_7351 nominal with elongated pad for handsoldering. (Body size source: IPC-SM-782 page 76, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf, https://docs.google.com/spreadsheets/d/1BsfQQcO9C6DZCsRaXUlFlo91Tg2WpOkGARC1WS5S8t0/edit?usp=sharing), generated with kicad-footprint-generator")
     (tags "capacitor handsolder")
     (property "Sheetfile" "Wearable Sound Alert System.kicad_sch")
@@ -3838,7 +3838,7 @@
 
   (footprint "LED_SMD:LED_0805_2012Metric_Pad1.15x1.40mm_HandSolder" (layer "F.Cu")
     (tstamp 836b0064-a0a6-4ff5-af32-6c0456460b5c)
-    (at 168.101 134.463)
+    (at 141.0875 190.6975)
     (descr "LED SMD 0805 (2012 Metric), square (rectangular) end terminal, IPC_7351 nominal, (Body size source: https://docs.google.com/spreadsheets/d/1BsfQQcO9C6DZCsRaXUlFlo91Tg2WpOkGARC1WS5S8t0/edit?usp=sharing), generated with kicad-footprint-generator")
     (tags "LED handsolder")
     (property "Sheetfile" "Wearable Sound Alert System.kicad_sch")
@@ -3896,7 +3896,7 @@
 
   (footprint "LED_SMD:LED_0805_2012Metric_Pad1.15x1.40mm_HandSolder" (layer "F.Cu")
     (tstamp 8642fba6-79a4-4000-833e-aaa45d96fece)
-    (at 168.101 119.263)
+    (at 141.0875 175.4975)
     (descr "LED SMD 0805 (2012 Metric), square (rectangular) end terminal, IPC_7351 nominal, (Body size source: https://docs.google.com/spreadsheets/d/1BsfQQcO9C6DZCsRaXUlFlo91Tg2WpOkGARC1WS5S8t0/edit?usp=sharing), generated with kicad-footprint-generator")
     (tags "LED handsolder")
     (property "Sheetfile" "Wearable Sound Alert System.kicad_sch")
@@ -3954,7 +3954,7 @@
 
   (footprint "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder" (layer "F.Cu")
     (tstamp 8cb623d8-6f9d-469b-9139-6e9f90559b8c)
-    (at 140.896 101.158)
+    (at 113.8825 157.3925)
     (descr "Capacitor SMD 0805 (2012 Metric), square (rectangular) end terminal, IPC_7351 nominal with elongated pad for handsoldering. (Body size source: IPC-SM-782 page 76, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf, https://docs.google.com/spreadsheets/d/1BsfQQcO9C6DZCsRaXUlFlo91Tg2WpOkGARC1WS5S8t0/edit?usp=sharing), generated with kicad-footprint-generator")
     (tags "capacitor handsolder")
     (property "Sheetfile" "Wearable Sound Alert System.kicad_sch")
@@ -4008,7 +4008,7 @@
 
   (footprint "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder" (layer "F.Cu")
     (tstamp 90fc62b6-9fc5-4c67-b73d-f62ea4cc3270)
-    (at 150.516 101.158)
+    (at 123.5025 157.3925)
     (descr "Capacitor SMD 0805 (2012 Metric), square (rectangular) end terminal, IPC_7351 nominal with elongated pad for handsoldering. (Body size source: IPC-SM-782 page 76, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf, https://docs.google.com/spreadsheets/d/1BsfQQcO9C6DZCsRaXUlFlo91Tg2WpOkGARC1WS5S8t0/edit?usp=sharing), generated with kicad-footprint-generator")
     (tags "capacitor handsolder")
     (property "Sheetfile" "Wearable Sound Alert System.kicad_sch")
@@ -4062,7 +4062,7 @@
 
   (footprint "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder" (layer "F.Cu")
     (tstamp 93ed8228-e711-4c43-ab66-3f0f8b1e34fb)
-    (at 131.276 101.158)
+    (at 104.2625 157.3925)
     (descr "Capacitor SMD 0805 (2012 Metric), square (rectangular) end terminal, IPC_7351 nominal with elongated pad for handsoldering. (Body size source: IPC-SM-782 page 76, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf, https://docs.google.com/spreadsheets/d/1BsfQQcO9C6DZCsRaXUlFlo91Tg2WpOkGARC1WS5S8t0/edit?usp=sharing), generated with kicad-footprint-generator")
     (tags "capacitor handsolder")
     (property "Sheetfile" "Wearable Sound Alert System.kicad_sch")
@@ -4116,7 +4116,7 @@
 
   (footprint "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder" (layer "F.Cu")
     (tstamp 9520751a-0161-4718-9122-2f4ad81712b9)
-    (at 131.276 92.128)
+    (at 104.2625 148.3625)
     (descr "Capacitor SMD 0805 (2012 Metric), square (rectangular) end terminal, IPC_7351 nominal with elongated pad for handsoldering. (Body size source: IPC-SM-782 page 76, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf, https://docs.google.com/spreadsheets/d/1BsfQQcO9C6DZCsRaXUlFlo91Tg2WpOkGARC1WS5S8t0/edit?usp=sharing), generated with kicad-footprint-generator")
     (tags "capacitor handsolder")
     (property "Sheetfile" "Wearable Sound Alert System.kicad_sch")
@@ -4170,7 +4170,7 @@
 
   (footprint "Downloaded_footprints:GCT_USB4125-GF-A_REVA2" (layer "F.Cu")
     (tstamp 9663b303-c98f-4caa-a0ef-1ba8b350d03b)
-    (at 154.476 75.528)
+    (at 127.4625 131.7625)
     (property "MANUFACTURER" "GCT")
     (property "MAXIMUM_PACKAGE_HEIGHT" "3.16 mm")
     (property "PARTREV" "Rev A2")
@@ -5777,7 +5777,7 @@
 
   (footprint "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder" (layer "F.Cu")
     (tstamp 9763ef04-a764-40c5-878a-21885eeabf02)
-    (at 131.276 98.148)
+    (at 104.2625 154.3825)
     (descr "Capacitor SMD 0805 (2012 Metric), square (rectangular) end terminal, IPC_7351 nominal with elongated pad for handsoldering. (Body size source: IPC-SM-782 page 76, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf, https://docs.google.com/spreadsheets/d/1BsfQQcO9C6DZCsRaXUlFlo91Tg2WpOkGARC1WS5S8t0/edit?usp=sharing), generated with kicad-footprint-generator")
     (tags "capacitor handsolder")
     (property "Sheetfile" "Wearable Sound Alert System.kicad_sch")
@@ -5831,7 +5831,7 @@
 
   (footprint "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder" (layer "F.Cu")
     (tstamp 9779817a-2e71-4f9c-9ee1-a82f3ec0f978)
-    (at 150.516 98.148)
+    (at 123.5025 154.3825)
     (descr "Capacitor SMD 0805 (2012 Metric), square (rectangular) end terminal, IPC_7351 nominal with elongated pad for handsoldering. (Body size source: IPC-SM-782 page 76, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf, https://docs.google.com/spreadsheets/d/1BsfQQcO9C6DZCsRaXUlFlo91Tg2WpOkGARC1WS5S8t0/edit?usp=sharing), generated with kicad-footprint-generator")
     (tags "capacitor handsolder")
     (property "Sheetfile" "Wearable Sound Alert System.kicad_sch")
@@ -5885,7 +5885,7 @@
 
   (footprint "Connector_IDC:IDC-Header_2x05_P2.54mm_Vertical" (layer "F.Cu")
     (tstamp 9addcde6-bf27-436d-928f-d799db6395bc)
-    (at 158.941 120.828)
+    (at 131.9275 177.0625)
     (descr "Through hole IDC box header, 2x05, 2.54mm pitch, DIN 41651 / IEC 60603-13, double rows, https://docs.google.com/spreadsheets/d/16SsEcesNF15N3Lb4niX7dcUr-NY5_MFPQhobNuNppn4/edit#gid=0")
     (tags "Through hole vertical IDC box header THT 2x05 2.54mm double row")
     (property "Sheetfile" "Wearable Sound Alert System.kicad_sch")
@@ -5999,7 +5999,7 @@
 
   (footprint "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder" (layer "F.Cu")
     (tstamp 9dbbfac6-c650-4104-bb0a-414dd46ddaa5)
-    (at 150.516 92.128)
+    (at 123.5025 148.3625)
     (descr "Capacitor SMD 0805 (2012 Metric), square (rectangular) end terminal, IPC_7351 nominal with elongated pad for handsoldering. (Body size source: IPC-SM-782 page 76, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf, https://docs.google.com/spreadsheets/d/1BsfQQcO9C6DZCsRaXUlFlo91Tg2WpOkGARC1WS5S8t0/edit?usp=sharing), generated with kicad-footprint-generator")
     (tags "capacitor handsolder")
     (property "Sheetfile" "Wearable Sound Alert System.kicad_sch")
@@ -6053,7 +6053,7 @@
 
   (footprint "LED_SMD:LED_0805_2012Metric_Pad1.15x1.40mm_HandSolder" (layer "F.Cu")
     (tstamp 9e10f1eb-a756-4606-9650-2b24e3168171)
-    (at 168.101 116.223)
+    (at 141.0875 172.4575)
     (descr "LED SMD 0805 (2012 Metric), square (rectangular) end terminal, IPC_7351 nominal, (Body size source: https://docs.google.com/spreadsheets/d/1BsfQQcO9C6DZCsRaXUlFlo91Tg2WpOkGARC1WS5S8t0/edit?usp=sharing), generated with kicad-footprint-generator")
     (tags "LED handsolder")
     (property "Sheetfile" "Wearable Sound Alert System.kicad_sch")
@@ -6111,7 +6111,7 @@
 
   (footprint "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder" (layer "F.Cu")
     (tstamp a1d8ee2e-8a0c-4d00-9ee0-bafe5388853e)
-    (at 150.516 104.168)
+    (at 123.5025 160.4025)
     (descr "Capacitor SMD 0805 (2012 Metric), square (rectangular) end terminal, IPC_7351 nominal with elongated pad for handsoldering. (Body size source: IPC-SM-782 page 76, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf, https://docs.google.com/spreadsheets/d/1BsfQQcO9C6DZCsRaXUlFlo91Tg2WpOkGARC1WS5S8t0/edit?usp=sharing), generated with kicad-footprint-generator")
     (tags "capacitor handsolder")
     (property "Sheetfile" "Wearable Sound Alert System.kicad_sch")
@@ -6165,7 +6165,7 @@
 
   (footprint "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder" (layer "F.Cu")
     (tstamp aa968b6a-d4a3-45e9-9a8f-cab8735fd569)
-    (at 140.896 89.118)
+    (at 113.8825 145.3525)
     (descr "Capacitor SMD 0805 (2012 Metric), square (rectangular) end terminal, IPC_7351 nominal with elongated pad for handsoldering. (Body size source: IPC-SM-782 page 76, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf, https://docs.google.com/spreadsheets/d/1BsfQQcO9C6DZCsRaXUlFlo91Tg2WpOkGARC1WS5S8t0/edit?usp=sharing), generated with kicad-footprint-generator")
     (tags "capacitor handsolder")
     (property "Sheetfile" "Wearable Sound Alert System.kicad_sch")
@@ -6219,7 +6219,7 @@
 
   (footprint "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder" (layer "F.Cu")
     (tstamp acbfe4ba-ba7e-4e24-99b9-62c4a169214e)
-    (at 164.796 97.938)
+    (at 137.7825 154.1725)
     (descr "Resistor SMD 0805 (2012 Metric), square (rectangular) end terminal, IPC_7351 nominal with elongated pad for handsoldering. (Body size source: IPC-SM-782 page 72, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf), generated with kicad-footprint-generator")
     (tags "resistor handsolder")
     (property "Sheetfile" "Wearable Sound Alert System.kicad_sch")
@@ -6273,7 +6273,7 @@
 
   (footprint "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder" (layer "F.Cu")
     (tstamp b4b9a6d9-4810-410a-b0e2-de28441a0cd6)
-    (at 145.706 104.168)
+    (at 118.6925 160.4025)
     (descr "Capacitor SMD 0805 (2012 Metric), square (rectangular) end terminal, IPC_7351 nominal with elongated pad for handsoldering. (Body size source: IPC-SM-782 page 76, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf, https://docs.google.com/spreadsheets/d/1BsfQQcO9C6DZCsRaXUlFlo91Tg2WpOkGARC1WS5S8t0/edit?usp=sharing), generated with kicad-footprint-generator")
     (tags "capacitor handsolder")
     (property "Sheetfile" "Wearable Sound Alert System.kicad_sch")
@@ -6327,7 +6327,7 @@
 
   (footprint "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder" (layer "F.Cu")
     (tstamp b92a6d5c-ad41-43da-aac8-42cd1e5c4b7c)
-    (at 131.276 107.178)
+    (at 104.2625 163.4125)
     (descr "Capacitor SMD 0805 (2012 Metric), square (rectangular) end terminal, IPC_7351 nominal with elongated pad for handsoldering. (Body size source: IPC-SM-782 page 76, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf, https://docs.google.com/spreadsheets/d/1BsfQQcO9C6DZCsRaXUlFlo91Tg2WpOkGARC1WS5S8t0/edit?usp=sharing), generated with kicad-footprint-generator")
     (tags "capacitor handsolder")
     (property "Sheetfile" "Wearable Sound Alert System.kicad_sch")
@@ -6381,7 +6381,7 @@
 
   (footprint "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder" (layer "F.Cu")
     (tstamp ba4ae6d3-ce10-4aec-92c7-291046c0175c)
-    (at 131.276 89.118)
+    (at 104.2625 145.3525)
     (descr "Capacitor SMD 0805 (2012 Metric), square (rectangular) end terminal, IPC_7351 nominal with elongated pad for handsoldering. (Body size source: IPC-SM-782 page 76, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf, https://docs.google.com/spreadsheets/d/1BsfQQcO9C6DZCsRaXUlFlo91Tg2WpOkGARC1WS5S8t0/edit?usp=sharing), generated with kicad-footprint-generator")
     (tags "capacitor handsolder")
     (property "Sheetfile" "Wearable Sound Alert System.kicad_sch")
@@ -6435,7 +6435,7 @@
 
   (footprint "MountingHole:MountingHole_3.2mm_M3" (layer "F.Cu")
     (tstamp ba9b7d6b-b5db-4209-beeb-76d54e2dd419)
-    (at 144.826 64.428)
+    (at 117.8125 120.6625)
     (descr "Mounting Hole 3.2mm, no annular, M3")
     (tags "mounting hole 3.2mm no annular m3")
     (property "Sheetfile" "Wearable Sound Alert System.kicad_sch")
@@ -6465,7 +6465,7 @@
 
   (footprint "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder" (layer "F.Cu")
     (tstamp bd3f4e58-5d1b-4ef0-a122-2d07eecb133f)
-    (at 160.046 94.988)
+    (at 133.0325 151.2225)
     (descr "Resistor SMD 0805 (2012 Metric), square (rectangular) end terminal, IPC_7351 nominal with elongated pad for handsoldering. (Body size source: IPC-SM-782 page 72, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf), generated with kicad-footprint-generator")
     (tags "resistor handsolder")
     (property "Sheetfile" "Wearable Sound Alert System.kicad_sch")
@@ -6519,7 +6519,7 @@
 
   (footprint "Connector_IDC:IDC-Header_2x10_P2.54mm_Vertical" (layer "F.Cu")
     (tstamp bfe42921-42d2-4e8c-80f9-dc64e9bc7736)
-    (at 134.111 58.628)
+    (at 107.0975 114.8625)
     (descr "Through hole IDC box header, 2x10, 2.54mm pitch, DIN 41651 / IEC 60603-13, double rows, https://docs.google.com/spreadsheets/d/16SsEcesNF15N3Lb4niX7dcUr-NY5_MFPQhobNuNppn4/edit#gid=0")
     (tags "Through hole vertical IDC box header THT 2x10 2.54mm double row")
     (property "Sheetfile" "Wearable Sound Alert System.kicad_sch")
@@ -6653,7 +6653,7 @@
 
   (footprint "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder" (layer "F.Cu")
     (tstamp c53ececf-2d8a-422b-9752-350d80dcee97)
-    (at 136.086 110.188)
+    (at 109.0725 166.4225)
     (descr "Capacitor SMD 0805 (2012 Metric), square (rectangular) end terminal, IPC_7351 nominal with elongated pad for handsoldering. (Body size source: IPC-SM-782 page 76, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf, https://docs.google.com/spreadsheets/d/1BsfQQcO9C6DZCsRaXUlFlo91Tg2WpOkGARC1WS5S8t0/edit?usp=sharing), generated with kicad-footprint-generator")
     (tags "capacitor handsolder")
     (property "Sheetfile" "Wearable Sound Alert System.kicad_sch")
@@ -6707,7 +6707,7 @@
 
   (footprint "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder" (layer "F.Cu")
     (tstamp c61c4adc-6721-4fe9-8215-2d6fb0438b6d)
-    (at 150.516 89.118)
+    (at 123.5025 145.3525)
     (descr "Capacitor SMD 0805 (2012 Metric), square (rectangular) end terminal, IPC_7351 nominal with elongated pad for handsoldering. (Body size source: IPC-SM-782 page 76, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf, https://docs.google.com/spreadsheets/d/1BsfQQcO9C6DZCsRaXUlFlo91Tg2WpOkGARC1WS5S8t0/edit?usp=sharing), generated with kicad-footprint-generator")
     (tags "capacitor handsolder")
     (property "Sheetfile" "Wearable Sound Alert System.kicad_sch")
@@ -6761,7 +6761,7 @@
 
   (footprint "LED_SMD:LED_0805_2012Metric_Pad1.15x1.40mm_HandSolder" (layer "F.Cu")
     (tstamp d01333ca-ea63-46d9-81ec-149afa499121)
-    (at 168.101 131.423)
+    (at 141.0875 187.6575)
     (descr "LED SMD 0805 (2012 Metric), square (rectangular) end terminal, IPC_7351 nominal, (Body size source: https://docs.google.com/spreadsheets/d/1BsfQQcO9C6DZCsRaXUlFlo91Tg2WpOkGARC1WS5S8t0/edit?usp=sharing), generated with kicad-footprint-generator")
     (tags "LED handsolder")
     (property "Sheetfile" "Wearable Sound Alert System.kicad_sch")
@@ -6819,7 +6819,7 @@
 
   (footprint "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder" (layer "F.Cu")
     (tstamp d225218c-3db3-4c4b-8fe7-51793d2eb240)
-    (at 145.706 92.128)
+    (at 118.6925 148.3625)
     (descr "Capacitor SMD 0805 (2012 Metric), square (rectangular) end terminal, IPC_7351 nominal with elongated pad for handsoldering. (Body size source: IPC-SM-782 page 76, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf, https://docs.google.com/spreadsheets/d/1BsfQQcO9C6DZCsRaXUlFlo91Tg2WpOkGARC1WS5S8t0/edit?usp=sharing), generated with kicad-footprint-generator")
     (tags "capacitor handsolder")
     (property "Sheetfile" "Wearable Sound Alert System.kicad_sch")
@@ -6873,7 +6873,7 @@
 
   (footprint "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder" (layer "F.Cu")
     (tstamp d717a432-2ee0-4872-aef3-8894aabd2d9d)
-    (at 140.896 104.168)
+    (at 113.8825 160.4025)
     (descr "Capacitor SMD 0805 (2012 Metric), square (rectangular) end terminal, IPC_7351 nominal with elongated pad for handsoldering. (Body size source: IPC-SM-782 page 76, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf, https://docs.google.com/spreadsheets/d/1BsfQQcO9C6DZCsRaXUlFlo91Tg2WpOkGARC1WS5S8t0/edit?usp=sharing), generated with kicad-footprint-generator")
     (tags "capacitor handsolder")
     (property "Sheetfile" "Wearable Sound Alert System.kicad_sch")
@@ -6927,7 +6927,7 @@
 
   (footprint "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder" (layer "F.Cu")
     (tstamp d98e65fd-07cc-4b9d-8346-49c41967b873)
-    (at 155.296 94.988)
+    (at 128.2825 151.2225)
     (descr "Resistor SMD 0805 (2012 Metric), square (rectangular) end terminal, IPC_7351 nominal with elongated pad for handsoldering. (Body size source: IPC-SM-782 page 72, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf), generated with kicad-footprint-generator")
     (tags "resistor handsolder")
     (property "Sheetfile" "Wearable Sound Alert System.kicad_sch")
@@ -6981,7 +6981,7 @@
 
   (footprint "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder" (layer "F.Cu")
     (tstamp db6905e6-8559-4e60-af5d-ed786c2908fe)
-    (at 160.046 97.938)
+    (at 133.0325 154.1725)
     (descr "Resistor SMD 0805 (2012 Metric), square (rectangular) end terminal, IPC_7351 nominal with elongated pad for handsoldering. (Body size source: IPC-SM-782 page 72, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf), generated with kicad-footprint-generator")
     (tags "resistor handsolder")
     (property "Sheetfile" "Wearable Sound Alert System.kicad_sch")
@@ -7035,7 +7035,7 @@
 
   (footprint "Downloaded_footprints:TPS63020DSJR" (layer "F.Cu")
     (tstamp dbcda83a-3972-450e-b0ab-5221a1d3168f)
-    (at 167.460999 60.609)
+    (at 140.447499 116.8435)
     (tags "TPS63020DSJR ")
     (property "Sheetfile" "Wearable Sound Alert System.kicad_sch")
     (property "Sheetname" "")
@@ -7848,7 +7848,7 @@
 
   (footprint "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder" (layer "F.Cu")
     (tstamp de4d8b92-6db3-4839-b2d7-cd312c71ff11)
-    (at 140.896 110.188)
+    (at 113.8825 166.4225)
     (descr "Capacitor SMD 0805 (2012 Metric), square (rectangular) end terminal, IPC_7351 nominal with elongated pad for handsoldering. (Body size source: IPC-SM-782 page 76, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf, https://docs.google.com/spreadsheets/d/1BsfQQcO9C6DZCsRaXUlFlo91Tg2WpOkGARC1WS5S8t0/edit?usp=sharing), generated with kicad-footprint-generator")
     (tags "capacitor handsolder")
     (property "Sheetfile" "Wearable Sound Alert System.kicad_sch")
@@ -7902,7 +7902,7 @@
 
   (footprint "Resistor_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P7.62mm_Horizontal" (layer "F.Cu")
     (tstamp e1afabdb-c973-4b53-bc42-6d54b7a9fdc6)
-    (at 154.396 109.838)
+    (at 127.3825 166.0725)
     (descr "Resistor, Axial_DIN0204 series, Axial, Horizontal, pin pitch=7.62mm, 0.167W, length*diameter=3.6*1.6mm^2, http://cdn-reichelt.de/documents/datenblatt/B400/1_4W%23YAG.pdf")
     (tags "Resistor Axial_DIN0204 series Axial Horizontal pin pitch 7.62mm 0.167W length 3.6mm diameter 1.6mm")
     (property "Sheetfile" "Wearable Sound Alert System.kicad_sch")
@@ -7968,7 +7968,7 @@
 
   (footprint "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder" (layer "F.Cu")
     (tstamp e2001f10-0b4b-43ff-8b0e-d750b1485a6c)
-    (at 160.046 100.888)
+    (at 133.0325 157.1225)
     (descr "Resistor SMD 0805 (2012 Metric), square (rectangular) end terminal, IPC_7351 nominal with elongated pad for handsoldering. (Body size source: IPC-SM-782 page 72, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf), generated with kicad-footprint-generator")
     (tags "resistor handsolder")
     (property "Sheetfile" "Wearable Sound Alert System.kicad_sch")
@@ -8022,7 +8022,7 @@
 
   (footprint "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder" (layer "F.Cu")
     (tstamp e2e95772-9f3a-4b25-a8c7-065ce257c529)
-    (at 140.896 92.128)
+    (at 113.8825 148.3625)
     (descr "Capacitor SMD 0805 (2012 Metric), square (rectangular) end terminal, IPC_7351 nominal with elongated pad for handsoldering. (Body size source: IPC-SM-782 page 76, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf, https://docs.google.com/spreadsheets/d/1BsfQQcO9C6DZCsRaXUlFlo91Tg2WpOkGARC1WS5S8t0/edit?usp=sharing), generated with kicad-footprint-generator")
     (tags "capacitor handsolder")
     (property "Sheetfile" "Wearable Sound Alert System.kicad_sch")
@@ -8076,7 +8076,7 @@
 
   (footprint "Downloaded_footprints:MAX17055" (layer "F.Cu")
     (tstamp e52e1726-b5b5-4433-86e9-76207a606f82)
-    (at 167.429 65.1365)
+    (at 140.4155 121.371)
     (tags "MAX17055ETB+T ")
     (property "Sheetfile" "Wearable Sound Alert System.kicad_sch")
     (property "Sheetname" "")
@@ -8163,7 +8163,7 @@
 
   (footprint "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder" (layer "F.Cu")
     (tstamp e7152416-a349-49cc-b168-10d7f9f41194)
-    (at 160.046 103.838)
+    (at 133.0325 160.0725)
     (descr "Resistor SMD 0805 (2012 Metric), square (rectangular) end terminal, IPC_7351 nominal with elongated pad for handsoldering. (Body size source: IPC-SM-782 page 72, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf), generated with kicad-footprint-generator")
     (tags "resistor handsolder")
     (property "Sheetfile" "Wearable Sound Alert System.kicad_sch")
@@ -8217,7 +8217,7 @@
 
   (footprint "Downloaded_footprints:DBV0006A_N" (layer "F.Cu")
     (tstamp e962ef81-b534-4e4c-b8eb-3a883f92e85e)
-    (at 157.376001 82.028001)
+    (at 130.362501 138.262501)
     (tags "BQ21040DBVR ")
     (property "Sheetfile" "Wearable Sound Alert System.kicad_sch")
     (property "Sheetname" "")
@@ -8444,7 +8444,7 @@
 
   (footprint "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder" (layer "F.Cu")
     (tstamp ea3723dd-b713-40b1-870f-dcbe433161e5)
-    (at 145.706 113.198)
+    (at 118.6925 169.4325)
     (descr "Capacitor SMD 0805 (2012 Metric), square (rectangular) end terminal, IPC_7351 nominal with elongated pad for handsoldering. (Body size source: IPC-SM-782 page 76, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf, https://docs.google.com/spreadsheets/d/1BsfQQcO9C6DZCsRaXUlFlo91Tg2WpOkGARC1WS5S8t0/edit?usp=sharing), generated with kicad-footprint-generator")
     (tags "capacitor handsolder")
     (property "Sheetfile" "Wearable Sound Alert System.kicad_sch")
@@ -8498,7 +8498,7 @@
 
   (footprint "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder" (layer "F.Cu")
     (tstamp ec2ceb17-6a94-48d9-8bed-8a78aea67f8b)
-    (at 136.086 92.128)
+    (at 109.0725 148.3625)
     (descr "Capacitor SMD 0805 (2012 Metric), square (rectangular) end terminal, IPC_7351 nominal with elongated pad for handsoldering. (Body size source: IPC-SM-782 page 76, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf, https://docs.google.com/spreadsheets/d/1BsfQQcO9C6DZCsRaXUlFlo91Tg2WpOkGARC1WS5S8t0/edit?usp=sharing), generated with kicad-footprint-generator")
     (tags "capacitor handsolder")
     (property "Sheetfile" "Wearable Sound Alert System.kicad_sch")
@@ -8552,7 +8552,7 @@
 
   (footprint "LED_SMD:LED_0805_2012Metric_Pad1.15x1.40mm_HandSolder" (layer "F.Cu")
     (tstamp ec90dd45-072e-4d40-a98c-fb7aee75e1a2)
-    (at 168.101 125.343)
+    (at 141.0875 181.5775)
     (descr "LED SMD 0805 (2012 Metric), square (rectangular) end terminal, IPC_7351 nominal, (Body size source: https://docs.google.com/spreadsheets/d/1BsfQQcO9C6DZCsRaXUlFlo91Tg2WpOkGARC1WS5S8t0/edit?usp=sharing), generated with kicad-footprint-generator")
     (tags "LED handsolder")
     (property "Sheetfile" "Wearable Sound Alert System.kicad_sch")
@@ -8610,7 +8610,7 @@
 
   (footprint "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder" (layer "F.Cu")
     (tstamp ee08af0c-8df7-4a2d-ab7d-fa94414fd799)
-    (at 155.296 92.038)
+    (at 128.2825 148.2725)
     (descr "Resistor SMD 0805 (2012 Metric), square (rectangular) end terminal, IPC_7351 nominal with elongated pad for handsoldering. (Body size source: IPC-SM-782 page 72, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf), generated with kicad-footprint-generator")
     (tags "resistor handsolder")
     (property "Sheetfile" "Wearable Sound Alert System.kicad_sch")
@@ -8664,7 +8664,7 @@
 
   (footprint "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder" (layer "F.Cu")
     (tstamp f2298f42-1613-4eb6-9a0c-758e8934a905)
-    (at 136.086 98.148)
+    (at 109.0725 154.3825)
     (descr "Capacitor SMD 0805 (2012 Metric), square (rectangular) end terminal, IPC_7351 nominal with elongated pad for handsoldering. (Body size source: IPC-SM-782 page 76, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf, https://docs.google.com/spreadsheets/d/1BsfQQcO9C6DZCsRaXUlFlo91Tg2WpOkGARC1WS5S8t0/edit?usp=sharing), generated with kicad-footprint-generator")
     (tags "capacitor handsolder")
     (property "Sheetfile" "Wearable Sound Alert System.kicad_sch")
@@ -8718,7 +8718,7 @@
 
   (footprint "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder" (layer "F.Cu")
     (tstamp f7a2a5c8-a185-45f4-8ab5-c0c32bbd68c1)
-    (at 160.046 106.788)
+    (at 133.0325 163.0225)
     (descr "Resistor SMD 0805 (2012 Metric), square (rectangular) end terminal, IPC_7351 nominal with elongated pad for handsoldering. (Body size source: IPC-SM-782 page 72, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf), generated with kicad-footprint-generator")
     (tags "resistor handsolder")
     (property "Sheetfile" "Wearable Sound Alert System.kicad_sch")
@@ -8772,7 +8772,7 @@
 
   (footprint "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder" (layer "F.Cu")
     (tstamp f890ab40-3e2a-4742-a471-58c9cc0aba75)
-    (at 136.086 95.138)
+    (at 109.0725 151.3725)
     (descr "Capacitor SMD 0805 (2012 Metric), square (rectangular) end terminal, IPC_7351 nominal with elongated pad for handsoldering. (Body size source: IPC-SM-782 page 76, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf, https://docs.google.com/spreadsheets/d/1BsfQQcO9C6DZCsRaXUlFlo91Tg2WpOkGARC1WS5S8t0/edit?usp=sharing), generated with kicad-footprint-generator")
     (tags "capacitor handsolder")
     (property "Sheetfile" "Wearable Sound Alert System.kicad_sch")
@@ -8826,7 +8826,7 @@
 
   (footprint "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder" (layer "F.Cu")
     (tstamp f9cd3084-a261-4dec-bad3-5c9e27e1d6d5)
-    (at 150.516 95.138)
+    (at 123.5025 151.3725)
     (descr "Capacitor SMD 0805 (2012 Metric), square (rectangular) end terminal, IPC_7351 nominal with elongated pad for handsoldering. (Body size source: IPC-SM-782 page 76, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf, https://docs.google.com/spreadsheets/d/1BsfQQcO9C6DZCsRaXUlFlo91Tg2WpOkGARC1WS5S8t0/edit?usp=sharing), generated with kicad-footprint-generator")
     (tags "capacitor handsolder")
     (property "Sheetfile" "Wearable Sound Alert System.kicad_sch")
@@ -8880,7 +8880,7 @@
 
   (footprint "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder" (layer "F.Cu")
     (tstamp fef26aba-5bc2-471f-a0c1-00939dd9f411)
-    (at 145.706 89.118)
+    (at 118.6925 145.3525)
     (descr "Capacitor SMD 0805 (2012 Metric), square (rectangular) end terminal, IPC_7351 nominal with elongated pad for handsoldering. (Body size source: IPC-SM-782 page 76, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf, https://docs.google.com/spreadsheets/d/1BsfQQcO9C6DZCsRaXUlFlo91Tg2WpOkGARC1WS5S8t0/edit?usp=sharing), generated with kicad-footprint-generator")
     (tags "capacitor handsolder")
     (property "Sheetfile" "Wearable Sound Alert System.kicad_sch")
@@ -8931,5 +8931,8 @@
       (rotate (xyz 0 0 0))
     )
   )
+
+  (gr_rect (start 25.4 101.6) (end 152.4 25.4)
+    (stroke (width 0.1) (type default)) (fill none) (layer "Edge.Cuts") (tstamp 3fd3c5ab-3885-45db-9800-1f318a124acc))
 
 )
