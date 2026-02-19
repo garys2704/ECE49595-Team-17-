@@ -1,0 +1,467 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<export version="E">
+  <design>
+    <source>C:\Users\tkdwp\OneDrive\Documents\sbeij\sbeij.kicad_sch</source>
+    <date>2/13/2026 8:51:19 PM</date>
+    <tool>Eeschema 7.0.10</tool>
+    <sheet number="1" name="/" tstamps="/">
+      <title_block>
+        <title/>
+        <company/>
+        <rev/>
+        <date/>
+        <source>sbeij.kicad_sch</source>
+        <comment number="1" value=""/>
+        <comment number="2" value=""/>
+        <comment number="3" value=""/>
+        <comment number="4" value=""/>
+        <comment number="5" value=""/>
+        <comment number="6" value=""/>
+        <comment number="7" value=""/>
+        <comment number="8" value=""/>
+        <comment number="9" value=""/>
+      </title_block>
+    </sheet>
+  </design>
+  <components>
+    <comp ref="C1">
+      <value>4.7u</value>
+      <footprint>Capacitor_SMD:C_0402_1005Metric</footprint>
+      <libsource lib="Device" part="C_Small" description="Unpolarized capacitor, small symbol"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="sbeij.kicad_sch"/>
+      <property name="ki_description" value="Unpolarized capacitor, small symbol"/>
+      <property name="ki_keywords" value="capacitor cap"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>f6c74cbc-47e3-460d-911e-cfbfc676e29e</tstamps>
+    </comp>
+    <comp ref="C2">
+      <value>0.1u</value>
+      <footprint>Capacitor_SMD:C_0402_1005Metric</footprint>
+      <libsource lib="Device" part="C_Small" description="Unpolarized capacitor, small symbol"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="sbeij.kicad_sch"/>
+      <property name="ki_description" value="Unpolarized capacitor, small symbol"/>
+      <property name="ki_keywords" value="capacitor cap"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>49493252-b301-4586-99af-353d39743a72</tstamps>
+    </comp>
+    <comp ref="C3">
+      <value>C</value>
+      <footprint>Capacitor_SMD:C_0402_1005Metric</footprint>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="sbeij.kicad_sch"/>
+      <property name="ki_description" value="Unpolarized capacitor"/>
+      <property name="ki_keywords" value="cap capacitor"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>0c728827-7356-4d74-af26-88d532415463</tstamps>
+    </comp>
+    <comp ref="CL1">
+      <value>C_Small</value>
+      <footprint>Capacitor_SMD:C_0402_1005Metric</footprint>
+      <libsource lib="Device" part="C_Small" description="Unpolarized capacitor, small symbol"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="sbeij.kicad_sch"/>
+      <property name="ki_description" value="Unpolarized capacitor, small symbol"/>
+      <property name="ki_keywords" value="capacitor cap"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>46bd86ce-e98a-4a20-a153-85c37e29d566</tstamps>
+    </comp>
+    <comp ref="Diode1">
+      <value>1N4007</value>
+      <footprint>Diode_THT:D_DO-41_SOD81_P10.16mm_Horizontal</footprint>
+      <datasheet>http://www.vishay.com/docs/88503/1n4001.pdf</datasheet>
+      <fields>
+        <field name="Sim.Device">D</field>
+        <field name="Sim.Pins">1=K 2=A</field>
+      </fields>
+      <libsource lib="Diode" part="1N4007" description="1000V 1A General Purpose Rectifier Diode, DO-41"/>
+      <property name="Sim.Device" value="D"/>
+      <property name="Sim.Pins" value="1=K 2=A"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="sbeij.kicad_sch"/>
+      <property name="ki_description" value="1000V 1A General Purpose Rectifier Diode, DO-41"/>
+      <property name="ki_keywords" value="diode"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>a18368cb-9a20-4130-b357-4f7a92f49a78</tstamps>
+    </comp>
+    <comp ref="HD-EM1003-LW15-R1">
+      <value>Motor_DC</value>
+      <libsource lib="Motor" part="Motor_DC" description="DC Motor"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="sbeij.kicad_sch"/>
+      <property name="exclude_from_board"/>
+      <property name="ki_description" value="DC Motor"/>
+      <property name="ki_keywords" value="DC Motor"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>8e43d5c3-b14e-429f-a84c-ac6826fc0968</tstamps>
+    </comp>
+    <comp ref="PMOF-9745W-42DQ1">
+      <value>Microphone</value>
+      <libsource lib="Device" part="Microphone" description="Microphone"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="sbeij.kicad_sch"/>
+      <property name="exclude_from_board"/>
+      <property name="ki_description" value="Microphone"/>
+      <property name="ki_keywords" value="microphone"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>b808ce9e-18b4-450c-b57a-cc0e9c2e8aaf</tstamps>
+    </comp>
+    <comp ref="Q1">
+      <value>IRLZ34N</value>
+      <footprint>Package_TO_SOT_SMD:TO-263-2</footprint>
+      <datasheet>http://www.infineon.com/dgdl/irlz34npbf.pdf?fileId=5546d462533600a40153567206892720</datasheet>
+      <libsource lib="Transistor_FET" part="IRLZ34N" description="30A Id, 55V Vds, 35mOhm Rds, N-Channel HEXFET Power MOSFET, TO-220AB"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="sbeij.kicad_sch"/>
+      <property name="ki_description" value="30A Id, 55V Vds, 35mOhm Rds, N-Channel HEXFET Power MOSFET, TO-220AB"/>
+      <property name="ki_keywords" value="N-Channel HEXFET MOSFET Logic-Level"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>24b11a1c-0fc6-454f-8e81-9fd53449fc1a</tstamps>
+    </comp>
+    <comp ref="R1">
+      <value>2.2k</value>
+      <footprint>Resistor_SMD:R_0402_1005Metric</footprint>
+      <libsource lib="Device" part="R_US" description="Resistor, US symbol"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="sbeij.kicad_sch"/>
+      <property name="ki_description" value="Resistor, US symbol"/>
+      <property name="ki_keywords" value="R res resistor"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>94c797b9-2928-4e0d-9b60-394e4c4636ed</tstamps>
+    </comp>
+    <comp ref="R2">
+      <value>3.3k</value>
+      <footprint>Resistor_SMD:R_0402_1005Metric</footprint>
+      <libsource lib="Device" part="R_US" description="Resistor, US symbol"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="sbeij.kicad_sch"/>
+      <property name="ki_description" value="Resistor, US symbol"/>
+      <property name="ki_keywords" value="R res resistor"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>8670c5a7-617c-49d0-9e02-c5ab0b35e5cd</tstamps>
+    </comp>
+    <comp ref="R3">
+      <value>330</value>
+      <footprint>Resistor_SMD:R_0402_1005Metric</footprint>
+      <libsource lib="Device" part="R_US" description="Resistor, US symbol"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="sbeij.kicad_sch"/>
+      <property name="ki_description" value="Resistor, US symbol"/>
+      <property name="ki_keywords" value="R res resistor"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>40e90466-4692-480c-a137-9335f68ca336</tstamps>
+    </comp>
+    <comp ref="R4">
+      <value>390</value>
+      <footprint>Resistor_SMD:R_0402_1005Metric</footprint>
+      <libsource lib="Device" part="R_US" description="Resistor, US symbol"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="sbeij.kicad_sch"/>
+      <property name="ki_description" value="Resistor, US symbol"/>
+      <property name="ki_keywords" value="R res resistor"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>b1fa2a5d-f940-443a-9ed8-28045862c944</tstamps>
+    </comp>
+    <comp ref="R5">
+      <value>4.7k</value>
+      <footprint>Resistor_SMD:R_0402_1005Metric</footprint>
+      <libsource lib="Device" part="R_US" description="Resistor, US symbol"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="sbeij.kicad_sch"/>
+      <property name="ki_description" value="Resistor, US symbol"/>
+      <property name="ki_keywords" value="R res resistor"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>c70c02ff-beb4-48d0-afa8-ff901cda1118</tstamps>
+    </comp>
+    <comp ref="R6">
+      <value>390</value>
+      <footprint>Resistor_SMD:R_0402_1005Metric</footprint>
+      <libsource lib="Device" part="R_US" description="Resistor, US symbol"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="sbeij.kicad_sch"/>
+      <property name="ki_description" value="Resistor, US symbol"/>
+      <property name="ki_keywords" value="R res resistor"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>6342c713-8083-418b-bc81-4c0c9498fced</tstamps>
+    </comp>
+    <comp ref="RB1">
+      <value>1k</value>
+      <footprint>Resistor_SMD:R_0402_1005Metric</footprint>
+      <libsource lib="Device" part="R_US" description="Resistor, US symbol"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="sbeij.kicad_sch"/>
+      <property name="ki_description" value="Resistor, US symbol"/>
+      <property name="ki_keywords" value="R res resistor"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>147fbaab-91e1-4b4d-a149-19e64a661620</tstamps>
+    </comp>
+    <comp ref="RL1">
+      <value>2.2k</value>
+      <footprint>Resistor_SMD:R_0402_1005Metric</footprint>
+      <libsource lib="Device" part="R_US" description="Resistor, US symbol"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="sbeij.kicad_sch"/>
+      <property name="ki_description" value="Resistor, US symbol"/>
+      <property name="ki_keywords" value="R res resistor"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>8e0ed2d7-1abc-48bc-8b7c-835e42839fd8</tstamps>
+    </comp>
+    <comp ref="U1">
+      <value>LM324</value>
+      <footprint>Package_SO:SOIC-8-N7_3.9x4.9mm_P1.27mm</footprint>
+      <datasheet>http://www.ti.com/lit/ds/symlink/lm2902-n.pdf</datasheet>
+      <libsource lib="Amplifier_Operational" part="LM324" description="Low-Power, Quad-Operational Amplifiers, DIP-14/SOIC-14/SSOP-14"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="sbeij.kicad_sch"/>
+      <property name="ki_description" value="Low-Power, Quad-Operational Amplifiers, DIP-14/SOIC-14/SSOP-14"/>
+      <property name="ki_keywords" value="quad opamp"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>b2aa26e9-d411-4b2a-97b1-7d123d3252ba ee830ca3-8dc4-4059-a311-88a9150c7693 29b19984-a0b4-4556-97c4-27637f06259e</tstamps>
+    </comp>
+  </components>
+  <libparts>
+    <libpart lib="Amplifier_Operational" part="LM324">
+      <description>Low-Power, Quad-Operational Amplifiers, DIP-14/SOIC-14/SSOP-14</description>
+      <docs>http://www.ti.com/lit/ds/symlink/lm2902-n.pdf</docs>
+      <footprints>
+        <fp>SOIC*3.9x8.7mm*P1.27mm*</fp>
+        <fp>DIP*W7.62mm*</fp>
+        <fp>TSSOP*4.4x5mm*P0.65mm*</fp>
+        <fp>SSOP*5.3x6.2mm*P0.65mm*</fp>
+        <fp>MSOP*3x3mm*P0.5mm*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">U</field>
+        <field name="Value">LM324</field>
+        <field name="Datasheet">http://www.ti.com/lit/ds/symlink/lm2902-n.pdf</field>
+      </fields>
+      <pins>
+        <pin num="1" name="" type="output"/>
+        <pin num="2" name="-" type="input"/>
+        <pin num="3" name="+" type="input"/>
+        <pin num="4" name="V+" type="power_in"/>
+        <pin num="5" name="+" type="input"/>
+        <pin num="6" name="-" type="input"/>
+        <pin num="7" name="" type="output"/>
+        <pin num="8" name="" type="output"/>
+        <pin num="9" name="-" type="input"/>
+        <pin num="10" name="+" type="input"/>
+        <pin num="11" name="V-" type="power_in"/>
+        <pin num="12" name="+" type="input"/>
+        <pin num="13" name="-" type="input"/>
+        <pin num="14" name="" type="output"/>
+      </pins>
+    </libpart>
+    <libpart lib="Device" part="C">
+      <description>Unpolarized capacitor</description>
+      <docs>~</docs>
+      <footprints>
+        <fp>C_*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">C</field>
+        <field name="Value">C</field>
+        <field name="Datasheet">~</field>
+      </fields>
+      <pins>
+        <pin num="1" name="" type="passive"/>
+        <pin num="2" name="" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Device" part="C_Small">
+      <description>Unpolarized capacitor, small symbol</description>
+      <docs>~</docs>
+      <footprints>
+        <fp>C_*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">C</field>
+        <field name="Value">C_Small</field>
+        <field name="Datasheet">~</field>
+      </fields>
+      <pins>
+        <pin num="1" name="" type="passive"/>
+        <pin num="2" name="" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Device" part="Microphone">
+      <description>Microphone</description>
+      <docs>~</docs>
+      <fields>
+        <field name="Reference">MK</field>
+        <field name="Value">Microphone</field>
+        <field name="Datasheet">~</field>
+      </fields>
+      <pins>
+        <pin num="1" name="-" type="passive"/>
+        <pin num="2" name="+" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Device" part="R_US">
+      <description>Resistor, US symbol</description>
+      <docs>~</docs>
+      <footprints>
+        <fp>R_*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">R</field>
+        <field name="Value">R_US</field>
+        <field name="Datasheet">~</field>
+      </fields>
+      <pins>
+        <pin num="1" name="" type="passive"/>
+        <pin num="2" name="" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Diode" part="1N4007">
+      <description>1000V 1A General Purpose Rectifier Diode, DO-41</description>
+      <docs>http://www.vishay.com/docs/88503/1n4001.pdf</docs>
+      <footprints>
+        <fp>D*DO?41*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">D</field>
+        <field name="Value">1N4007</field>
+        <field name="Footprint">Diode_THT:D_DO-41_SOD81_P10.16mm_Horizontal</field>
+        <field name="Datasheet">http://www.vishay.com/docs/88503/1n4001.pdf</field>
+        <field name="Sim.Device">D</field>
+        <field name="Sim.Pins">1=K 2=A</field>
+      </fields>
+      <pins>
+        <pin num="1" name="K" type="passive"/>
+        <pin num="2" name="A" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Motor" part="Motor_DC">
+      <description>DC Motor</description>
+      <docs>~</docs>
+      <footprints>
+        <fp>PinHeader*P2.54mm*</fp>
+        <fp>TerminalBlock*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">M</field>
+        <field name="Value">Motor_DC</field>
+        <field name="Datasheet">~</field>
+      </fields>
+      <pins>
+        <pin num="1" name="+" type="passive"/>
+        <pin num="2" name="-" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Transistor_FET" part="IRLZ34N">
+      <description>30A Id, 55V Vds, 35mOhm Rds, N-Channel HEXFET Power MOSFET, TO-220AB</description>
+      <docs>http://www.infineon.com/dgdl/irlz34npbf.pdf?fileId=5546d462533600a40153567206892720</docs>
+      <footprints>
+        <fp>TO?220*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">Q</field>
+        <field name="Value">IRLZ34N</field>
+        <field name="Footprint">Package_TO_SOT_THT:TO-220-3_Vertical</field>
+        <field name="Datasheet">http://www.infineon.com/dgdl/irlz34npbf.pdf?fileId=5546d462533600a40153567206892720</field>
+      </fields>
+      <pins>
+        <pin num="1" name="G" type="input"/>
+        <pin num="2" name="D" type="passive"/>
+        <pin num="3" name="S" type="passive"/>
+      </pins>
+    </libpart>
+  </libparts>
+  <libraries>
+    <library logical="Amplifier_Operational">
+      <uri>C:\Program Files\KiCad\7.0\share\kicad\symbols\/Amplifier_Operational.kicad_sym</uri>
+    </library>
+    <library logical="Device">
+      <uri>C:\Program Files\KiCad\7.0\share\kicad\symbols\/Device.kicad_sym</uri>
+    </library>
+    <library logical="Diode">
+      <uri>C:\Program Files\KiCad\7.0\share\kicad\symbols\/Diode.kicad_sym</uri>
+    </library>
+    <library logical="Motor">
+      <uri>C:\Program Files\KiCad\7.0\share\kicad\symbols\/Motor.kicad_sym</uri>
+    </library>
+    <library logical="Transistor_FET">
+      <uri>C:\Program Files\KiCad\7.0\share\kicad\symbols\/Transistor_FET.kicad_sym</uri>
+    </library>
+  </libraries>
+  <nets>
+    <net code="1" name="+3.3V">
+      <node ref="Diode1" pin="1" pinfunction="K" pintype="passive"/>
+      <node ref="HD-EM1003-LW15-R1" pin="1" pinfunction="+" pintype="passive"/>
+    </net>
+    <net code="2" name="+4V">
+      <node ref="RL1" pin="1" pintype="passive"/>
+    </net>
+    <net code="3" name="GND">
+      <node ref="C2" pin="1" pintype="passive"/>
+      <node ref="PMOF-9745W-42DQ1" pin="1" pinfunction="-" pintype="passive"/>
+      <node ref="Q1" pin="3" pinfunction="S" pintype="passive"/>
+      <node ref="R1" pin="2" pintype="passive"/>
+      <node ref="R3" pin="2" pintype="passive"/>
+      <node ref="R4" pin="2" pintype="passive"/>
+    </net>
+    <net code="4" name="IO pin">
+      <node ref="RB1" pin="1" pintype="passive"/>
+    </net>
+    <net code="5" name="Net-(C1-Pad1)">
+      <node ref="C1" pin="1" pintype="passive"/>
+      <node ref="CL1" pin="1" pintype="passive"/>
+    </net>
+    <net code="6" name="Net-(C3-Pad1)">
+      <node ref="C3" pin="1" pintype="passive"/>
+      <node ref="R5" pin="1" pintype="passive"/>
+      <node ref="U1" pin="7" pintype="output"/>
+    </net>
+    <net code="7" name="Net-(CL1-Pad2)">
+      <node ref="CL1" pin="2" pintype="passive"/>
+      <node ref="PMOF-9745W-42DQ1" pin="2" pinfunction="+" pintype="passive"/>
+      <node ref="RL1" pin="2" pintype="passive"/>
+    </net>
+    <net code="8" name="Net-(Diode1-A)">
+      <node ref="Diode1" pin="2" pinfunction="A" pintype="passive"/>
+      <node ref="HD-EM1003-LW15-R1" pin="2" pinfunction="-" pintype="passive"/>
+      <node ref="Q1" pin="2" pinfunction="D" pintype="passive"/>
+    </net>
+    <net code="9" name="Net-(Q1-G)">
+      <node ref="Q1" pin="1" pinfunction="G" pintype="input"/>
+      <node ref="RB1" pin="2" pintype="passive"/>
+    </net>
+    <net code="10" name="Net-(R2-Pad1)">
+      <node ref="R2" pin="1" pintype="passive"/>
+      <node ref="R6" pin="2" pintype="passive"/>
+      <node ref="U1" pin="1" pintype="output"/>
+    </net>
+    <net code="11" name="Net-(U1A-+)">
+      <node ref="R1" pin="1" pintype="passive"/>
+      <node ref="R2" pin="2" pintype="passive"/>
+      <node ref="U1" pin="3" pinfunction="+" pintype="input"/>
+    </net>
+    <net code="12" name="Net-(U1A--)">
+      <node ref="C1" pin="2" pintype="passive"/>
+      <node ref="R3" pin="1" pintype="passive"/>
+      <node ref="U1" pin="2" pinfunction="-" pintype="input"/>
+    </net>
+    <net code="13" name="Net-(U1B-+)">
+      <node ref="R4" pin="1" pintype="passive"/>
+      <node ref="R5" pin="2" pintype="passive"/>
+      <node ref="U1" pin="5" pinfunction="+" pintype="input"/>
+    </net>
+    <net code="14" name="Net-(U1B--)">
+      <node ref="C2" pin="2" pintype="passive"/>
+      <node ref="R6" pin="1" pintype="passive"/>
+      <node ref="U1" pin="6" pinfunction="-" pintype="input"/>
+    </net>
+    <net code="15" name="Vout">
+      <node ref="C3" pin="2" pintype="passive"/>
+    </net>
+    <net code="16" name="unconnected-(U1E-V+-Pad4)">
+      <node ref="U1" pin="4" pinfunction="V+" pintype="power_in"/>
+    </net>
+    <net code="17" name="unconnected-(U1E-V--Pad11)">
+      <node ref="U1" pin="11" pinfunction="V-" pintype="power_in"/>
+    </net>
+  </nets>
+</export>
