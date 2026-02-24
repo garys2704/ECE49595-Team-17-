@@ -45,6 +45,19 @@ static void removeMean(int16_t *x, int n) {
   }
 }
 
+static int noiseFloor = 8;
+static void updateNoiseFloor(int amp) {
+  int noiseThreshold = 20; // only learn noise when it’s not loud
+  if (amp < noiseThreshold) {
+    noiseFloor = (noiseFloor * 31 + amp) / 32;
+  }
+}
+
+static int recenteredAmp(int amp) {
+  int a = amp - noiseFloor;
+  return (a > 0) ? a : 0;
+}
+
 // light PHAT weighting (phase transform)
 static void preEmphasis(int16_t *x, int n) {
   for (int i = n - 1; i >= 1; i--) x[i] = (int16_t)(x[i] - x[i - 1]);
@@ -146,11 +159,21 @@ void loop() {
   int minLoudness2 = 0; int maxLoudness2 = 10;
   int minLoudness3 = 0; int maxLoudness3 = 10;
 
+  updateNoiseFloor(amplitude0);
+  updateNoiseFloor(amplitude1);
+  updateNoiseFloor(amplitude2);
+  updateNoiseFloor(amplitude3);
+
+  int ampCentered0 = recenteredAmp(amplitude0);
+  int ampCentered1 = recenteredAmp(amplitude1);
+  int ampCentered2 = recenteredAmp(amplitude2);
+  int ampCentered3 = recenteredAmp(amplitude3);
+
   // map Amplitude to PWM (0-255) (scales amplitude to motor speed)
-  int vibrationIntensity0 = map(amplitude0, minLoudness0, maxLoudness0, 0, 255);
-  int vibrationIntensity1 = map(amplitude1, minLoudness1, maxLoudness1, 0, 255);
-  int vibrationIntensity2 = map(amplitude2, minLoudness2, maxLoudness2, 0, 255);
-  int vibrationIntensity3 = map(amplitude3, minLoudness3, maxLoudness3, 0, 255);
+  int vibrationIntensity0 = map(ampCentered0, minLoudness0, maxLoudness0, 0, 255);
+  int vibrationIntensity1 = map(ampCentered1, minLoudness1, maxLoudness1, 0, 255);
+  int vibrationIntensity2 = map(ampCentered2, minLoudness2, maxLoudness2, 0, 255);
+  int vibrationIntensity3 = map(ampCentered3, minLoudness3, maxLoudness3, 0, 255);
 
   // constrain (Safety Clipping) (no negative values to motors)
   vibrationIntensity0 = constrain(vibrationIntensity0, 0, 255);
