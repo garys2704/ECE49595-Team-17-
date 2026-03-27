@@ -36,6 +36,6 @@ void MenuText(uint16_t menuVal);
 
 void MenuBar (uint16_t stat*, uint16_t *oldStat);
 
-void Battery (uint16_t batt*, uint16_t *oldBatt);
+void BatteryBar (uint16_t batt*, uint16_t *oldBatt);
 
 #endif
