@@ -32,4 +32,10 @@ void ILI9341_Draw_Rectangle(uint16_t x1, uint16_t y1, uint16_t x2, uint16_t y2, 
 
 void ILI9341_Draw_Rectangle_Filled(uint16_t x, uint16_t y, uint16_t w, uint16_t h, uint16_t color);
 
+void MenuText(uint16_t menuVal);
+
+void MenuBar (uint16_t stat*, uint16_t *oldStat);
+
+void Battery (uint16_t batt*, uint16_t *oldBatt);
+
 #endif
