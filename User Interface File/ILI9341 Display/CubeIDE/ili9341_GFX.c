@@ -9,6 +9,9 @@
 #include "ili9341_GFX.h"
 #include "fonts.h"
 
+#define TFT_WIDTH  240
+#define TFT_HEIGHT 320
+
 #define rx 0
 #define ry 0
 #define rh 0
