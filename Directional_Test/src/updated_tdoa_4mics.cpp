@@ -192,8 +192,8 @@ void loop() {
 
   // 2. Trigger condition
   int maxAmp = max(max(amplitude0, amplitude1), max(amplitude2, amplitude3));
-  bool triggered = (amplitude0 > triggerThreshold0 || amplitude1 > triggerThreshold1
-                  || amplitude2 > triggerThreshold2 || amplitude3 > triggerThreshold3) 
+  bool triggered = (ampCentered0 > triggerThreshold0 || ampCentered1 > triggerThreshold1
+                  || ampCentered2 > triggerThreshold2 || ampCentered3 > triggerThreshold3) 
                   && (maxAmp > MIN_TRIGGER_AMP);
 
   if (triggered) {
