@@ -116,6 +116,7 @@ void ILI9341_Draw_Text(uint16_t x, uint16_t y, char *str, FontDef font, uint16_t
     }
 }
 
+/*
 void ILI9341_Draw_Bar(uint16_t x, uint16_t y, uint16_t w, uint16_t h, uint16_t color) {
 	ILI9341_Draw_Rectangle_Filled(x, y, w, h, color);
 
@@ -127,7 +128,7 @@ void ILI9341_Draw_Battery(uint16_t x, uint16_t y, uint16_t w, uint16_t h, uint16
 
 	ILI9341_Draw_Rectangle(bx, by, bw, bh, color);
 }
-
+*/
 void MenuText(int menuVal) {
     ILI9341_Draw_Rectangle_Filled(0, 0, TFT_WIDTH, 50, ILI9341_Black);
 
