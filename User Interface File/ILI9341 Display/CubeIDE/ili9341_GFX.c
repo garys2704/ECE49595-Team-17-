@@ -13,14 +13,14 @@
 #define TFT_HEIGHT 320
 
 #define rx 0
-#define ry 0
-#define rh 0
-#define rw 0
+#define ry 50
+#define rh 200
+#define rw 20
 
 #define bx 0
-#define by 0
-#define bw 0
-#define bh 0
+#define by 60
+#define bw 60
+#define bh 20
 
 /*
 ILI9341_Fill_Screen(0x0000);
@@ -127,3 +127,47 @@ void ILI9341_Draw_Battery(uint16_t x, uint16_t y, uint16_t w, uint16_t h, uint16
 
 	ILI9341_Draw_Rectangle(bx, by, bw, bh, color);
 }
+
+void MenuText(int menuVal) {
+    ILI9341_Draw_Rectangle_Filled(0, 0, TFT_WIDTH, 50, ILI9341_Black);
+
+    if(menuVal == 0){
+        ILI9341_Draw_Text(0, 0, "Volume", Font_11x18, ILI9341_White);
+    }
+    else if(menuVal == 1){
+        ILI9341_Draw_Text(0, 0, "Sensitivity", Font_11x18, ILI9341_White);
+    }
+}
+
+void MenuBar(int* stat) {
+    int cx = TFT_WIDTH / 2;
+    int base = TFT_HEIGHT - ry;
+
+    if(*stat > oldStat){
+        ILI9341_Draw_Rectangle_Filled(cx - rw/2, base - *stat, rw, *stat - oldStat, ILI9341_Green);
+    }
+    else {
+        ILI9341_Draw_Rectangle_Filled(cx - rw/2, base - oldStat, rw, oldStat - *stat, ILI9341_Black);
+    }
+
+    ILI9341_Draw_Rectangle(cx - rw/2, base - rh, rw, rh, ILI9341_Green);
+
+    oldStat = *stat;
+}
+
+void BatteryBar(int* batt) {
+    int cx = TFT_WIDTH / 2 + TFT_WIDTH / 4;
+    int base = cx - bw / 2;
+
+    if(*batt > oldBatt){
+        ILI9341_Draw_Rectangle_Filled(oldBatt - base, TFT_HEIGHT - by - bh, *batt - oldBatt, bh, ILI9341_Green);
+    }
+    else {
+        ILI9341_Draw_Rectangle_Filled(*batt - base, TFT_HEIGHT - by - bh, oldBatt - *batt, bh, ILI9341_Black);
+    }
+
+    ILI9341_Draw_Rectangle(base, TFT_HEIGHT - by - bh, bw, bh, ILI9341_Green);
+
+    oldBatt = *batt;
+}
+
