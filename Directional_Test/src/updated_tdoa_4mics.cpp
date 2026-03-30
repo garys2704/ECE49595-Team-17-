@@ -1,93 +1,109 @@
 #include <Arduino.h>
 
-// !!! placeholder pins - replace with actual values !!!
+// ─── Pin assignments (update to match your wiring) ───
 const int micPin0 = A0; // Front
 const int micPin1 = A1; // Right
 const int micPin2 = A2; // Back
 const int micPin3 = A3; // Left
 
-const int motorPin0 = 3;
-const int motorPin1 = 5;
-const int motorPin2 = 6;
-const int motorPin3 = 9;
+const int motorPin0 = 3;  // Front
+const int motorPin1 = 5;  // Right
+const int motorPin2 = 6;  // Back
+const int motorPin3 = 9;  // Left
 
-// center/trigger values are the same as the old 'micCenterL'
-const int micCenter0 = 5;
-const int micCenter1 = 5;
-const int micCenter2 = 5;
-const int micCenter3 = 5;
+// ─── ADC mid-rail bias ───
+// With 10-bit ADC (0-1023), a typical electret/MEMS mic biased at VCC/2
+// sits near 512. These get auto-calibrated in setup().
+static int micCenter0 = 512;
+static int micCenter1 = 512;
+static int micCenter2 = 512;
+static int micCenter3 = 512;
 
-const int triggerThreshold0 = 200;
-const int triggerThreshold1 = 200;
-const int triggerThreshold2 = 200;
-const int triggerThreshold3 = 200;
+// ─── Sampling parameters ───
+// 4 sequential analogReads on STM32F7 at ~15µs each ≈ 60µs total.
+// 8 kHz is conservative and reliable. Increase only if you move to
+// DMA/timer-driven ADC for true simultaneous sampling.
+static const uint32_t FS_HZ    = 8000;
+static const uint32_t TS_US    = 1000000UL / FS_HZ;
+static const int      N        = 128;   // frame size (16ms at 8kHz)
+static const int      LAG_MAX  = 8;     // max lag to search (samples)
 
-static const uint32_t FS_HZ = 16000; // sample frequency
-static const uint32_t TS_US = 1000000UL / FS_HZ; // sample period
-static const int N = 128; // frame size
-static const int LAG_MAX = 8; // temp, dependent on mic spacing
-static const int MIN_TRIGGER_AMP = 4; // extra guard
+// ─── Trigger thresholds ───
+// Compared against frame RMS (not raw amplitude).
+// Quiet room RMS ≈ 5-15 counts; speech at arm's length ≈ 30-100.
+static const int TRIGGER_RMS    = 15;
+static const int MIN_PEAK_AMP   = 30;
 
+// ─── Motor output ───
+static const int MOTOR_MIN_PWM  = 80;   // minimum PWM to spin motor
+static const int MOTOR_MAX_PWM  = 255;
+static const int MOTOR_PULSE_MS = 60;   // vibration pulse duration (ms)
+
+// ─── Per-mic noise floors ───
+static int noiseFloor[4] = {8, 8, 8, 8};
+
+static void updateNoiseFloor(int idx, int amp) {
+  if (amp < 20) {
+    noiseFloor[idx] = (noiseFloor[idx] * 31 + amp) / 32;
+  }
+}
+
+// ─── Buffers ───
 static int16_t buf0[N];
 static int16_t buf1[N];
 static int16_t buf2[N];
 static int16_t buf3[N];
 
-// DC removal
+// ─── DC removal (subtract frame mean) ───
 static void removeMean(int16_t *x, int n) {
   int32_t sum = 0;
-  for (int i = 0; i < n; i++) {
-    sum += x[i];
-  }
+  for (int i = 0; i < n; i++) sum += x[i];
   int16_t mean = (int16_t)(sum / n);
+  for (int i = 0; i < n; i++) x[i] -= mean;
+}
+
+// ─── RMS energy of a frame ───
+static int frameRMS(const int16_t *x, int n) {
+  int64_t sumSq = 0;
   for (int i = 0; i < n; i++) {
-    x[i] = (int16_t)(x[i] - mean);
+    sumSq += (int32_t)x[i] * (int32_t)x[i];
   }
+  return (int)sqrtf((float)sumSq / (float)n);
 }
 
-static int noiseFloor = 8;
-static void updateNoiseFloor(int amp) {
-  int noiseThreshold = 20; // only learn noise when it’s not loud
-  if (amp < noiseThreshold) {
-    noiseFloor = (noiseFloor * 31 + amp) / 32;
+// ─── Peak amplitude of a frame ───
+static int framePeak(const int16_t *x, int n) {
+  int peak = 0;
+  for (int i = 0; i < n; i++) {
+    int a = abs(x[i]);
+    if (a > peak) peak = a;
   }
+  return peak;
 }
 
-static int recenteredAmp(int amp) {
-  int a = amp - noiseFloor;
-  return (a > 0) ? a : 0;
-}
-
-// light PHAT weighting (phase transform)
+// ─── Pre-emphasis (approximates PHAT weighting) ───
 static void preEmphasis(int16_t *x, int n) {
-  for (int i = n - 1; i >= 1; i--) x[i] = (int16_t)(x[i] - x[i - 1]);
+  for (int i = n - 1; i >= 1; i--) {
+    x[i] = (int16_t)(x[i] - x[i - 1]);
+  }
   x[0] = 0;
 }
 
-// limited-lag correlation (returns best lag in samples)
-// lag > 0 -> R arrives later than L (sound is closer to L)
-// lag < 0 -> R arrives earlier than L (sound is closer to R)
-static int lagCorrelation(const int16_t *Lsig, const int16_t *Rsig, int n, int lagMax) {
-  int bestLag = 0; // lag with the highest correlation score
+// ─── Cross-correlation with limited lag ───
+// Returns best lag in samples.
+//   lag > 0  →  Rsig arrives later (sound closer to L)
+//   lag < 0  →  Rsig arrives earlier (sound closer to R)
+static int lagCorrelation(const int16_t *Lsig, const int16_t *Rsig,
+                          int n, int lagMax) {
+  int bestLag = 0;
   int64_t bestScore = INT64_MIN;
 
   for (int lag = -lagMax; lag <= lagMax; lag++) {
-    int startL = 0; // Lsig start index
-    int startR = 0; // Rsig start index
-    int count = n; // number of overlapping samples
+    int startL = (lag < 0) ? -lag : 0;
+    int startR = (lag > 0) ?  lag : 0;
+    int count  = n - abs(lag);
 
-    if (lag > 0) { // shift Rsig fwd, skip first 'lag' samples of Rsig
-      startR = lag; 
-      count = n - lag;
-    }
-    if (lag < 0) { // shift Lsig fwd, skip first '-lag' samples of Lsig
-      startL = -lag; 
-      count = n + lag;
-    }
-
-    int64_t acc = 0; // accumlated similarity score
-
-    // amplifies aligned samples to see correlation
+    int64_t acc = 0;
     for (int i = 0; i < count; i++) {
       acc += (int32_t)Lsig[startL + i] * (int32_t)Rsig[startR + i];
     }
@@ -100,32 +116,60 @@ static int lagCorrelation(const int16_t *Lsig, const int16_t *Rsig, int n, int l
   return bestLag;
 }
 
-// capture N samples w/ timed polling
+// ─── Capture N samples with timed polling ───
 static void captureFrame(int16_t *m0, int16_t *m1, int16_t *m2, int16_t *m3) {
   uint32_t next = micros();
 
   for (int i = 0; i < N; i++) {
-    // sequential not simultaneous (will need updated)
-    int raw0 = analogRead(micPin0);
-    int raw1 = analogRead(micPin1);
-    int raw2 = analogRead(micPin2);
-    int raw3 = analogRead(micPin3);
-
-    m0[i] = (int16_t)(raw0 - micCenter0);
-    m1[i] = (int16_t)(raw1 - micCenter1);
-    m2[i] = (int16_t)(raw2 - micCenter2);
-    m3[i] = (int16_t)(raw3 - micCenter3);
+    m0[i] = (int16_t)(analogRead(micPin0) - micCenter0);
+    m1[i] = (int16_t)(analogRead(micPin1) - micCenter1);
+    m2[i] = (int16_t)(analogRead(micPin2) - micCenter2);
+    m3[i] = (int16_t)(analogRead(micPin3) - micCenter3);
 
     next += TS_US;
-    while ((int32_t)(micros() - next) < 0) {
-      // wait until next sample time
-    }
+    while ((int32_t)(micros() - next) < 0) { /* spin */ }
   }
 }
 
+// ─── Auto-calibrate mic DC bias at startup ───
+static void calibrateMicBias() {
+  Serial.println("Calibrating mic bias... keep environment quiet.");
+  delay(500);
+
+  const int CAL_SAMPLES = 256;
+  int32_t sum0 = 0, sum1 = 0, sum2 = 0, sum3 = 0;
+
+  for (int i = 0; i < CAL_SAMPLES; i++) {
+    sum0 += analogRead(micPin0);
+    sum1 += analogRead(micPin1);
+    sum2 += analogRead(micPin2);
+    sum3 += analogRead(micPin3);
+    delayMicroseconds(500);
+  }
+
+  micCenter0 = (int)(sum0 / CAL_SAMPLES);
+  micCenter1 = (int)(sum1 / CAL_SAMPLES);
+  micCenter2 = (int)(sum2 / CAL_SAMPLES);
+  micCenter3 = (int)(sum3 / CAL_SAMPLES);
+
+  Serial.print("Mic bias: ");
+  Serial.print(micCenter0); Serial.print(", ");
+  Serial.print(micCenter1); Serial.print(", ");
+  Serial.print(micCenter2); Serial.print(", ");
+  Serial.println(micCenter3);
+}
+
+// ─── Map RMS to motor PWM ───
+static int rmsToMotorPWM(int rms) {
+  if (rms < TRIGGER_RMS) return 0;
+  int pwm = map(rms, TRIGGER_RMS, 150, MOTOR_MIN_PWM, MOTOR_MAX_PWM);
+  return constrain(pwm, MOTOR_MIN_PWM, MOTOR_MAX_PWM);
+}
+
+// ═══════════════════════════════════════════════════════════════
 void setup() {
   Serial.begin(115200);
-  analogReadResolution(10);
+  analogReadResolution(10);  // 0-1023
 
   pinMode(motorPin0, OUTPUT);
   pinMode(motorPin1, OUTPUT);
@@ -137,163 +181,175 @@ void setup() {
   analogWrite(motorPin2, 0);
   analogWrite(motorPin3, 0);
 
+  calibrateMicBias();
+
   Serial.println("System Initialized - STM32F767ZI");
+  Serial.print("Fs = "); Serial.print(FS_HZ);
+  Serial.print(" Hz, Ts = "); Serial.print(TS_US);
+  Serial.print(" us, N = "); Serial.println(N);
 }
 
+// ═══════════════════════════════════════════════════════════════
 void loop() {
-  // 1. Read Sensors
-  int sensorValue0 = analogRead(micPin0); // Front
-  int sensorValue1 = analogRead(micPin1); // Right
-  int sensorValue2 = analogRead(micPin2); // Back
-  int sensorValue3 = analogRead(micPin3); // Left
+  // ── 1. Quick single-sample check ──
+  int raw0 = analogRead(micPin0);
+  int raw1 = analogRead(micPin1);
+  int raw2 = analogRead(micPin2);
+  int raw3 = analogRead(micPin3);
 
-  // calculate Amplitude (Distance from "Quiet" voltage)
-  int amplitude0 = abs(sensorValue0 - micCenter0);
-  int amplitude1 = abs(sensorValue1 - micCenter1);
-  int amplitude2 = abs(sensorValue2 - micCenter2);
-  int amplitude3 = abs(sensorValue3 - micCenter3);
+  int amp0 = abs(raw0 - micCenter0);
+  int amp1 = abs(raw1 - micCenter1);
+  int amp2 = abs(raw2 - micCenter2);
+  int amp3 = abs(raw3 - micCenter3);
 
-  // define Loudness Range
-  int minLoudness0 = 0; int maxLoudness0 = 10;
-  int minLoudness1 = 0; int maxLoudness1 = 10;
-  int minLoudness2 = 0; int maxLoudness2 = 10;
-  int minLoudness3 = 0; int maxLoudness3 = 10;
+  updateNoiseFloor(0, amp0);
+  updateNoiseFloor(1, amp1);
+  updateNoiseFloor(2, amp2);
+  updateNoiseFloor(3, amp3);
 
-  updateNoiseFloor(amplitude0);
-  updateNoiseFloor(amplitude1);
-  updateNoiseFloor(amplitude2);
-  updateNoiseFloor(amplitude3);
+  // Quick trigger: any mic above its noise floor + margin?
+  int margin = 10;
+  bool quickTrigger = (amp0 > noiseFloor[0] + margin) ||
+                      (amp1 > noiseFloor[1] + margin) ||
+                      (amp2 > noiseFloor[2] + margin) ||
+                      (amp3 > noiseFloor[3] + margin);
 
-  int ampCentered0 = recenteredAmp(amplitude0);
-  int ampCentered1 = recenteredAmp(amplitude1);
-  int ampCentered2 = recenteredAmp(amplitude2);
-  int ampCentered3 = recenteredAmp(amplitude3);
-
-  // map Amplitude to PWM (0-255) (scales amplitude to motor speed)
-  int vibrationIntensity0 = map(ampCentered0, minLoudness0, maxLoudness0, 0, 255);
-  int vibrationIntensity1 = map(ampCentered1, minLoudness1, maxLoudness1, 0, 255);
-  int vibrationIntensity2 = map(ampCentered2, minLoudness2, maxLoudness2, 0, 255);
-  int vibrationIntensity3 = map(ampCentered3, minLoudness3, maxLoudness3, 0, 255);
-
-  // constrain (Safety Clipping) (no negative values to motors)
-  vibrationIntensity0 = constrain(vibrationIntensity0, 0, 255);
-  vibrationIntensity1 = constrain(vibrationIntensity1, 0, 255);
-  vibrationIntensity2 = constrain(vibrationIntensity2, 0, 255);
-  vibrationIntensity3 = constrain(vibrationIntensity3, 0, 255);
-
-  // Serial monitor formatting for prototyping
-  
-  // I hid this because i didnt feel like formatting it but feel free to if you need to see the values
-
-  Serial.print("Amp0: "); Serial.print(ampCentered0);
-  Serial.print(" | Amp1: "); Serial.print(ampCentered1);
-  Serial.print(" | Amp2: "); Serial.print(ampCentered2);
-  Serial.print(" | Amp3: "); Serial.println(ampCentered3);
-
-  // 2. Trigger condition
-  int maxAmp = max(max(amplitude0, amplitude1), max(amplitude2, amplitude3));
-  bool triggered = (ampCentered0 > triggerThreshold0 || ampCentered1 > triggerThreshold1
-                  || ampCentered2 > triggerThreshold2 || ampCentered3 > triggerThreshold3) 
-                  && (maxAmp > MIN_TRIGGER_AMP);
-
-  if (triggered) {
-    // 3. Capture a short frame and compute TDOA
-    captureFrame(buf0, buf1, buf2, buf3);
-
-    // preprocess for correlation stab.
-    removeMean(buf0, N);
-    removeMean(buf1, N);
-    removeMean(buf2, N);
-    removeMean(buf3, N);
-
-    preEmphasis(buf0, N);
-    preEmphasis(buf1, N);
-    preEmphasis(buf2, N);
-    preEmphasis(buf3, N);
-
-    int lagX = lagCorrelation(buf3, buf1, N, LAG_MAX); // Left vs Right
-    int lagY = lagCorrelation(buf0, buf2, N, LAG_MAX); // Front vs Back
-
-    float dtX_us = (1e6f * (float)lagX) / (float)FS_HZ;
-    float dtY_us = (1e6f * (float)lagY) / (float)FS_HZ;
-
-    // 4. Decide direction from lag sign
-    // turn on/off corresponding motor pin
-    // 0, 1, 2, 3 = FRONT, RIGHT, BACK, LEFT
-    if (abs(lagX) > abs(lagY)) { // LEFT RIGHT (1, 3)
-      if (lagX > 0) { // vibrate left
-        Serial.print(">>> LEFT by TDOA, lag="); Serial.print(lagX);
-        Serial.print(" samples, dt="); Serial.print(dtX_us); Serial.println(" us");
-        analogWrite(motorPin3, vibrationIntensity3);
-        analogWrite(motorPin1, 0);
-        analogWrite(motorPin0, 0);
-        analogWrite(motorPin2, 0);
-      }
-      else if (lagX < 0) { // vibrate right
-        Serial.print(">>> RIGHT by TDOA, lag="); Serial.print(lagX);
-        Serial.print(" samples, dt="); Serial.print(dtX_us); Serial.println(" us");
-        analogWrite(motorPin1, vibrationIntensity1);
-        analogWrite(motorPin3, 0);
-        analogWrite(motorPin0, 0);
-        analogWrite(motorPin2, 0);
-      }
-      else {
-        Serial.println(">>> CENTER L/R (lagX=0)");
-        analogWrite(motorPin0, 0);
-        analogWrite(motorPin1, vibrationIntensity1 / 4);
-        analogWrite(motorPin2, 0);
-        analogWrite(motorPin3, vibrationIntensity3 / 4);
-      }
-    } 
-    else if (abs(lagX) < abs(lagY)) { // FRONT BACK (0, 2)
-      if (lagY > 0) { // vibrate front
-        Serial.print(">>> FRONT by TDOA, lag="); Serial.print(lagY);
-        Serial.print(" samples, dt="); Serial.print(dtY_us); Serial.println(" us");
-        analogWrite(motorPin0, vibrationIntensity0);
-        analogWrite(motorPin2, 0);
-        analogWrite(motorPin1, 0);
-        analogWrite(motorPin3, 0);
-      }
-      else if (lagY < 0) { // vibrate back
-        Serial.print(">>> BACK by TDOA, lag="); Serial.print(lagY);
-        Serial.print(" samples, dt="); Serial.print(dtY_us); Serial.println(" us");
-        analogWrite(motorPin2, vibrationIntensity2);
-        analogWrite(motorPin0, 0);
-        analogWrite(motorPin1, 0);
-        analogWrite(motorPin3, 0);
-      }
-      else {
-        Serial.println(">>> CENTER F/B (lagY=0)");
-        analogWrite(motorPin0, vibrationIntensity0 / 4);
-        analogWrite(motorPin1, 0);
-        analogWrite(motorPin2, vibrationIntensity2 / 4);
-        analogWrite(motorPin3, 0);
-      }
-    } 
-    else { // split vibration (lag = 0)
-      Serial.println(">>> CENTER (lag=0)");
-      analogWrite(motorPin0, vibrationIntensity0 / 4);
-      analogWrite(motorPin1, vibrationIntensity1 / 4);
-      analogWrite(motorPin2, vibrationIntensity2 / 4);
-      analogWrite(motorPin3, vibrationIntensity3 / 4);
-    }
-
-    // delay so user can feel it
-    delay(40);
-
-    // set motor pins back to 0
-    analogWrite(motorPin0, 0);
-    analogWrite(motorPin1, 0);
-    analogWrite(motorPin2, 0);
-    analogWrite(motorPin3, 0);
-
-  } 
-  else {
-    analogWrite(motorPin0, 0);
-    analogWrite(motorPin1, 0);
-    analogWrite(motorPin2, 0);
-    analogWrite(motorPin3, 0);
+  if (!quickTrigger) {
+    delay(1);
+    return;
   }
 
-  delay(5);
+  // ── 2. Capture full frame ──
+  captureFrame(buf0, buf1, buf2, buf3);
+
+  // ── 3. Preprocess ──
+  removeMean(buf0, N);
+  removeMean(buf1, N);
+  removeMean(buf2, N);
+  removeMean(buf3, N);
+
+  // Check frame energy
+  int rms0 = frameRMS(buf0, N);
+  int rms1 = frameRMS(buf1, N);
+  int rms2 = frameRMS(buf2, N);
+  int rms3 = frameRMS(buf3, N);
+  int maxRMS = max(max(rms0, rms1), max(rms2, rms3));
+
+  int maxPeak = max(max(framePeak(buf0, N), framePeak(buf1, N)),
+                    max(framePeak(buf2, N), framePeak(buf3, N)));
+
+  if (maxRMS < TRIGGER_RMS || maxPeak < MIN_PEAK_AMP) {
+    Serial.print("Below threshold: RMS="); Serial.print(maxRMS);
+    Serial.print(" Peak="); Serial.println(maxPeak);
+    return;
+  }
+
+  Serial.print("RMS: "); Serial.print(rms0);
+  Serial.print(", "); Serial.print(rms1);
+  Serial.print(", "); Serial.print(rms2);
+  Serial.print(", "); Serial.print(rms3);
+  Serial.print("  Peak: "); Serial.println(maxPeak);
+
+  // Copy buffers for correlation (pre-emphasis is destructive)
+  int16_t corr0[N], corr1[N], corr2[N], corr3[N];
+  memcpy(corr0, buf0, sizeof(buf0));
+  memcpy(corr1, buf1, sizeof(buf1));
+  memcpy(corr2, buf2, sizeof(buf2));
+  memcpy(corr3, buf3, sizeof(buf3));
+
+  preEmphasis(corr0, N);
+  preEmphasis(corr1, N);
+  preEmphasis(corr2, N);
+  preEmphasis(corr3, N);
+
+  // ── 4. TDOA via cross-correlation ──
+  // lagX: Left(3) vs Right(1) — positive = sound from left
+  // lagY: Front(0) vs Back(2) — positive = sound from front
+  int lagX = lagCorrelation(corr3, corr1, N, LAG_MAX);
+  int lagY = lagCorrelation(corr0, corr2, N, LAG_MAX);
+
+  float dtX_us = (1e6f * (float)lagX) / (float)FS_HZ;
+  float dtY_us = (1e6f * (float)lagY) / (float)FS_HZ;
+
+  Serial.print("lagX="); Serial.print(lagX);
+  Serial.print(" ("); Serial.print(dtX_us); Serial.print("us)");
+  Serial.print("  lagY="); Serial.print(lagY);
+  Serial.print(" ("); Serial.print(dtY_us); Serial.println("us)");
+
+  // ── 5. Motor intensity from frame energy ──
+  int pwmMax = max(max(rmsToMotorPWM(rms0), rmsToMotorPWM(rms1)),
+                   max(rmsToMotorPWM(rms2), rmsToMotorPWM(rms3)));
+
+  // ── 6. Activate motor based on direction ──
+  int motorFront = 0, motorRight = 0, motorBack = 0, motorLeft = 0;
+  int absX = abs(lagX);
+  int absY = abs(lagY);
+
+  if (absX == 0 && absY == 0) {
+    // No directional cue — gentle buzz all around
+    Serial.println(">>> OMNI");
+    motorFront = motorRight = motorBack = motorLeft = pwmMax / 4;
+  }
+  else if (absX > absY) {
+    // Predominantly left or right
+    if (lagX > 0) {
+      Serial.println(">>> LEFT");
+      motorLeft = pwmMax;
+    } else {
+      Serial.println(">>> RIGHT");
+      motorRight = pwmMax;
+    }
+    // Blend secondary axis
+    if (absY > 0) {
+      int blend = pwmMax / 3;
+      if (lagY > 0) motorFront = blend;
+      else          motorBack  = blend;
+    }
+  }
+  else if (absY > absX) {
+    // Predominantly front or back
+    if (lagY > 0) {
+      Serial.println(">>> FRONT");
+      motorFront = pwmMax;
+    } else {
+      Serial.println(">>> BACK");
+      motorBack = pwmMax;
+    }
+    if (absX > 0) {
+      int blend = pwmMax / 3;
+      if (lagX > 0) motorLeft  = blend;
+      else          motorRight = blend;
+    }
+  }
+  else {
+    // Equal diagonal — activate two motors
+    int diag = pwmMax * 2 / 3;
+    if      (lagX > 0 && lagY > 0) { Serial.println(">>> FRONT-LEFT");  motorFront = diag; motorLeft  = diag; }
+    else if (lagX < 0 && lagY > 0) { Serial.println(">>> FRONT-RIGHT"); motorFront = diag; motorRight = diag; }
+    else if (lagX > 0 && lagY < 0) { Serial.println(">>> BACK-LEFT");   motorBack  = diag; motorLeft  = diag; }
+    else                           { Serial.println(">>> BACK-RIGHT");  motorBack  = diag; motorRight = diag; }
+  }
+
+  // Enforce motor minimum (below this they won't spin)
+  if (motorFront > 0) motorFront = max(motorFront, MOTOR_MIN_PWM);
+  if (motorRight > 0) motorRight = max(motorRight, MOTOR_MIN_PWM);
+  if (motorBack  > 0) motorBack  = max(motorBack,  MOTOR_MIN_PWM);
+  if (motorLeft  > 0) motorLeft  = max(motorLeft,   MOTOR_MIN_PWM);
+
+  // Write PWM
+  analogWrite(motorPin0, constrain(motorFront, 0, 255));
+  analogWrite(motorPin1, constrain(motorRight, 0, 255));
+  analogWrite(motorPin2, constrain(motorBack,  0, 255));
+  analogWrite(motorPin3, constrain(motorLeft,  0, 255));
+
+  delay(MOTOR_PULSE_MS);
+
+  // Motors off
+  analogWrite(motorPin0, 0);
+  analogWrite(motorPin1, 0);
+  analogWrite(motorPin2, 0);
+  analogWrite(motorPin3, 0);
+
+  // Cooldown to avoid retriggering on the same sound
+  delay(20);
 }
