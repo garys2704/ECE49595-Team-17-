@@ -12,12 +12,17 @@ const int motorPin2 = 6;  // Back
 const int motorPin3 = 9;  // Left
 
 // ─── ADC mid-rail bias ───
-// With 10-bit ADC (0-1023), a typical electret/MEMS mic biased at VCC/2
-// sits near 512. These get auto-calibrated in setup().
-static int micCenter0 = 512;
-static int micCenter1 = 512;
-static int micCenter2 = 512;
-static int micCenter3 = 512;
+// With 12-bit ADC (0-4095), a typical electret/MEMS mic biased at VCC/2
+// sits near 2048. These get auto-calibrated in setup().
+static int micCenter0 = 2048;
+static int micCenter1 = 2048;
+static int micCenter2 = 2048;
+static int micCenter3 = 2048;
+
+// ─── Per-mic gain compensation ───
+// Increase for weaker mics. Measure RMS from equal distance to find ratio.
+// Example: if mic2 reads ~60% of the others, set its gain to ~1.7
+static const float micGain[4] = {1.0f, 1.0f, 1.0f, 1.0f};
 
 // ─── Sampling parameters ───
 // 4 sequential analogReads on STM32F7 at ~15µs each ≈ 60µs total.
@@ -30,9 +35,9 @@ static const int      LAG_MAX  = 8;     // max lag to search (samples)
 
 // ─── Trigger thresholds ───
 // Compared against frame RMS (not raw amplitude).
-// Quiet room RMS ≈ 5-15 counts; speech at arm's length ≈ 30-100.
-static const int TRIGGER_RMS    = 15;
-static const int MIN_PEAK_AMP   = 30;
+// 12-bit ADC: quiet room RMS ≈ 20-60 counts; speech ≈ 120-400.
+static const int TRIGGER_RMS    = 60;
+static const int MIN_PEAK_AMP   = 120;
 
 // ─── Motor output ───
 static const int MOTOR_MIN_PWM  = 80;   // minimum PWM to spin motor
@@ -40,10 +45,10 @@ static const int MOTOR_MAX_PWM  = 255;
 static const int MOTOR_PULSE_MS = 60;   // vibration pulse duration (ms)
 
 // ─── Per-mic noise floors ───
-static int noiseFloor[4] = {8, 8, 8, 8};
+static int noiseFloor[4] = {32, 32, 32, 32};
 
 static void updateNoiseFloor(int idx, int amp) {
-  if (amp < 20) {
+  if (amp < 80) {
     noiseFloor[idx] = (noiseFloor[idx] * 31 + amp) / 32;
   }
 }
@@ -121,10 +126,10 @@ static void captureFrame(int16_t *m0, int16_t *m1, int16_t *m2, int16_t *m3) {
   uint32_t next = micros();
 
   for (int i = 0; i < N; i++) {
-    m0[i] = (int16_t)(analogRead(micPin0) - micCenter0);
-    m1[i] = (int16_t)(analogRead(micPin1) - micCenter1);
-    m2[i] = (int16_t)(analogRead(micPin2) - micCenter2);
-    m3[i] = (int16_t)(analogRead(micPin3) - micCenter3);
+    m0[i] = (int16_t)((float)(analogRead(micPin0) - micCenter0) * micGain[0]);
+    m1[i] = (int16_t)((float)(analogRead(micPin1) - micCenter1) * micGain[1]);
+    m2[i] = (int16_t)((float)(analogRead(micPin2) - micCenter2) * micGain[2]);
+    m3[i] = (int16_t)((float)(analogRead(micPin3) - micCenter3) * micGain[3]);
 
     next += TS_US;
     while ((int32_t)(micros() - next) < 0) { /* spin */ }
@@ -162,14 +167,14 @@ static void calibrateMicBias() {
 // ─── Map RMS to motor PWM ───
 static int rmsToMotorPWM(int rms) {
   if (rms < TRIGGER_RMS) return 0;
-  int pwm = map(rms, TRIGGER_RMS, 150, MOTOR_MIN_PWM, MOTOR_MAX_PWM);
+  int pwm = map(rms, TRIGGER_RMS, 600, MOTOR_MIN_PWM, MOTOR_MAX_PWM);
   return constrain(pwm, MOTOR_MIN_PWM, MOTOR_MAX_PWM);
 }
 
 // ═══════════════════════════════════════════════════════════════
 void setup() {
   Serial.begin(115200);
-  analogReadResolution(10);  // 0-1023
+  analogReadResolution(12);  // 0-4095
 
   pinMode(motorPin0, OUTPUT);
   pinMode(motorPin1, OUTPUT);
@@ -197,10 +202,10 @@ void loop() {
   int raw2 = analogRead(micPin2);
   int raw3 = analogRead(micPin3);
 
-  int amp0 = abs(raw0 - micCenter0);
-  int amp1 = abs(raw1 - micCenter1);
-  int amp2 = abs(raw2 - micCenter2);
-  int amp3 = abs(raw3 - micCenter3);
+  int amp0 = abs((int)((float)(raw0 - micCenter0) * micGain[0]));
+  int amp1 = abs((int)((float)(raw1 - micCenter1) * micGain[1]));
+  int amp2 = abs((int)((float)(raw2 - micCenter2) * micGain[2]));
+  int amp3 = abs((int)((float)(raw3 - micCenter3) * micGain[3]));
 
   updateNoiseFloor(0, amp0);
   updateNoiseFloor(1, amp1);
@@ -208,7 +213,7 @@ void loop() {
   updateNoiseFloor(3, amp3);
 
   // Quick trigger: any mic above its noise floor + margin?
-  int margin = 10;
+  int margin = 40;
   bool quickTrigger = (amp0 > noiseFloor[0] + margin) ||
                       (amp1 > noiseFloor[1] + margin) ||
                       (amp2 > noiseFloor[2] + margin) ||
